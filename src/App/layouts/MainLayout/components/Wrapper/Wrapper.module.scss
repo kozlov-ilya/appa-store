@@ -1,0 +1,5 @@
+.Wrapper {
+  max-width: calc(1440px - var(--main-inline-padding) * 2);
+  padding-inline: var(--main-inline-padding);
+  margin: 0 auto;
+}

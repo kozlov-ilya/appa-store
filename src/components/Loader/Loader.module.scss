@@ -1,0 +1,42 @@
+.Loader {
+  display: inline-flex;
+
+  /* ---------------------------------- size ---------------------------------- */
+  &_size_sm {
+    width: 14px;
+    height: 14px;
+  }
+
+  &_size_md {
+    width: 18px;
+    height: 18px;
+  }
+
+  &_size_lg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* ---------------------------------- color --------------------------------- */
+  &_color_current {
+    color: inherit;
+  }
+
+  &_color_accent {
+    color: var(--color-text-accent);
+  }
+}
+
+.Icon {
+  animation: rotate 1.2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}

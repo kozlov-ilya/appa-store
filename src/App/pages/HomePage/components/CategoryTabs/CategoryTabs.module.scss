@@ -1,0 +1,13 @@
+.CategoryTabs {
+  display: flex;
+  gap: $space-8;
+  justify-content: center;
+}
+
+.TabButton {
+  min-width: 125px;
+}
+
+.FiltersButton {
+  color: var(--color-text-primary);
+}

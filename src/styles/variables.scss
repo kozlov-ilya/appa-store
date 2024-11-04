@@ -1,0 +1,32 @@
+/* --------------------------------- spacing -------------------------------- */
+$space-4: 4px;
+$space-8: 8px;
+$space-12: 12px;
+$space-16: 16px;
+$space-24: 24px;
+$space-32: 32px;
+$space-40: 40px;
+$space-48: 48px;
+$space-64: 64px;
+
+/* ------------------------------- breakpoints ------------------------------ */
+$bp-xs-520: 520px;
+$bp-sm-768: 768px;
+$bp-md-1020: 1020px;
+$bp-lg-1280: 1280px;
+$bp-xl-1640: 1640px;
+
+/* --------------------------------- radius --------------------------------- */
+$radius-4: 4px;
+$radius-6: 6px;
+$radius-8: 8px;
+$radius-12: 12px;
+$radius-16: 16px;
+
+:root {
+  --main-inline-padding: #{$space-24};
+
+  @media screen and (width < #{$bp-sm-768}) {
+    --main-inline-padding: #{$space-12};
+  }
+}

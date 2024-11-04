@@ -1,0 +1,107 @@
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-8;
+  overflow: hidden;
+
+  width: var(--button-width, auto);
+  height: var(--button-height);
+  padding: 0;
+  padding-inline: var(--button-padding, $space-12);
+  border: none;
+  border-radius: var(--button-radius);
+  margin: 0;
+  background: var(--button-bg);
+
+  text-decoration: none;
+  color: var(--button-color);
+
+  cursor: var(--button-cursor, pointer);
+  user-select: none;
+
+  /* --------------------------------- variant -------------------------------- */
+  &_variant_solid {
+    --button-bg: var(--color-bg-contrast);
+    --button-color: var(--color-text-contrast);
+
+    &:hover {
+      filter: contrast(0.88) saturate(1.1) brightness(1.1);
+    }
+
+    &:active {
+      filter: contrast(0.82) saturate(1.2) brightness(1.16);
+    }
+  }
+
+  &_variant_ghost {
+    --button-bg: transparent;
+
+    &:hover {
+      --button-bg: var(--color-bg-hover);
+    }
+
+    &:active {
+      --button-bg: var(--color-bg-active);
+    }
+  }
+
+  &_variant_soft {
+    --button-bg: var(--color-bg-soft);
+    --button-color: var(--color-text-secondary);
+
+    &:hover {
+      --button-bg: var(--color-bg-soft-hover);
+    }
+
+    &:active {
+      --button-bg: var(--color-bg-soft-active);
+    }
+  }
+
+  /* --------------------------------- radius --------------------------------- */
+  &_radius_none {
+    --button-radius: none;
+  }
+
+  &_radius_md {
+    --button-radius: 6px;
+  }
+
+  &_radius_full {
+    --button-radius: 9999px;
+  }
+
+  /* ---------------------------------- size ---------------------------------- */
+  &_size_sm {
+    --button-height: 32px;
+  }
+
+  &_size_md {
+    --button-height: 36px;
+  }
+
+  &_size_lg {
+    --button-height: 42px;
+  }
+
+  /* -------------------------------- stretched ------------------------------- */
+  &_stretched {
+    --button-width: 100%;
+  }
+
+  /* -------------------------------- stretched ------------------------------- */
+  &_type_icon {
+    --button-padding: none;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* -------------------------------- disabled -------------------------------- */
+  &_disabled,
+  &:disabled {
+    --button-bg: var(--color-bg-disabled);
+    --button-color: var(--color-text-disabled);
+    --button-cursor: default;
+    pointer-events: none;
+  }
+}
