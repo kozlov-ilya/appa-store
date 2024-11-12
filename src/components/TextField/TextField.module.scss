@@ -1,0 +1,109 @@
+.TextField {
+  position: relative;
+  overflow: hidden;
+
+  height: var(--textfield-height);
+  padding: var(--textfield-padding);
+  border-radius: var(--textfield-radius);
+  background: var(--textfield-background);
+
+  /* --------------------------------- variant -------------------------------- */
+  &_variant_outline {
+    --textfield-border: 1.5px solid var(--textfield-border-color, var(--color-text-secondary));
+    --textfield-background: transparent;
+
+    &:focus-within {
+      --textfield-border-color: var(--color-text-primary);
+    }
+  }
+
+  &_variant_fill {
+    --textfield-border: none;
+    --textfield-background: var(--color-bg-soft);
+    --textfield-border-color: var(--color-text-secondary);
+
+    &:focus-within {
+      --textfield-background: var(--color-bg-soft-hover);
+    }
+  }
+
+  /* ---------------------------------- size ---------------------------------- */
+  &_size_sm {
+    --textfield-height: 36px;
+    --textfield-padding: #{$space-4} #{$space-12};
+  }
+
+  &_size_md {
+    --textfield-height: 40px;
+    --textfield-padding: #{$space-8} #{$space-16};
+  }
+
+  &_size_lg {
+    --textfield-height: 48px;
+    --textfield-padding: #{$space-12} #{$space-16};
+  }
+
+  /* --------------------------------- radius --------------------------------- */
+  &_radius_none {
+    --textfield-radius: none;
+  }
+
+  &_radius_sm {
+    --textfield-radius: #{$radius-8};
+  }
+
+  &_radius_full {
+    --textfield-radius: 9999px;
+  }
+}
+
+.Label {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Control {
+  flex-grow: 1;
+  z-index: 1;
+
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 16px;
+  line-height: 20px;
+
+  &::placeholder {
+    color: var(--color-text-secondary);
+  }
+
+  &:disabled::placeholder {
+    color: var(--color-text-disabled);
+    user-select: none;
+  }
+}
+
+.Box {
+  position: absolute;
+  inset: 0;
+
+  border: var(--textfield-border);
+  border-radius: var(--textfield-radius);
+
+  cursor: var(--box-cursor, text);
+}
+
+.LeftContent,
+.RightContent {
+  color: var(--textfield-border-color, var(--color-text-secondary));
+}
+
+.LeftContent {
+  margin-right: $space-12;
+}
+
+.RightContent {
+  margin-left: $space-12;
+}

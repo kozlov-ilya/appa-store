@@ -30,8 +30,11 @@
       "assets/*": ["assets/*"],
       "configs/*": ["configs/*"],
       "hooks/*": ["hooks/*"],
-      "types/*": ["types/*"],
-      "api/*": ["api/*"]
+      "api/*": ["api/*"],
+      "store/*": ["store/*"],
+      "config/*": ["config/*"],
+      "contexts/*": ["contexts/*"],
+      "utils/*": ["utils/*"]
     }
   },
   "include": ["src"]

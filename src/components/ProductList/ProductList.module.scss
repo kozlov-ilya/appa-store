@@ -1,0 +1,12 @@
+.ProductList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: $space-24;
+
+  margin-top: $space-32;
+}
+
+.ProductsCount {
+  text-align: center;
+  color: var(--color-text-secondary);
+}

@@ -3,5 +3,21 @@
   width: 100%;
   height: 100%;
 
+  -webkit-touch-callout: none; /* Safari */
+  -webkit-user-select: none; /* Chrome */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
+
+  &_radius_sm {
+    border-radius: $radius-8;
+  }
+
+  &_radius_md {
+    border-radius: $radius-12;
+  }
+
+  &_radius_lg {
+    border-radius: $radius-16;
+  }
 }

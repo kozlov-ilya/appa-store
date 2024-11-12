@@ -1,5 +1,7 @@
 .ProductCard {
   max-width: 600px;
+  position: relative;
+  overflow: hidden;
 
   &:hover {
     cursor: pointer;
@@ -25,9 +27,47 @@
   user-select: none;
 }
 
+.ProductLink {
+  position: absolute;
+  inset: 0;
+}
+
 .Body {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: $space-16;
+}
+
+.Info {
+  flex-grow: 1;
+}
+
+.CartButton {
+  z-index: 1;
+}
+
+.ImageSkeleton {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+}
+
+.NameSkeleton {
+  display: inline-block;
+  width: 80%;
+}
+
+.PriceSkeleton {
+  display: inline-block;
+  width: 30%;
+}
+
+.CartButtonSkeleton {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  overflow: hidden;
 }

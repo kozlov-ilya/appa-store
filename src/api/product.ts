@@ -1,32 +1,97 @@
-import { doc, getDoc, collection, getDocs, setDoc, where, query } from 'firebase/firestore';
-import { db } from 'configs/firebase';
-import { TProduct } from 'types';
+import {
+  doc,
+  getDoc,
+  collection,
+  getDocs,
+  setDoc,
+  where,
+  query,
+  orderBy,
+  limit,
+  startAfter,
+  getCountFromServer,
+} from 'firebase/firestore';
+import { FIRESTORE_COLLECTIONS } from 'config/consts';
+import { db } from 'config/firebase';
+import { TProduct, TProductApi, TProductsQueryParams } from 'store/types';
+import { createSearchIndex, getSoundexTerms } from 'utils/fuzzySearch';
+import { TProductsParams, TProductsReturnValue } from './types';
 
-export const getProduct = async (id: string): Promise<TProduct | null> => {
-  const docRef = doc(db, 'products', id);
+export const addProduct = async (product: TProduct): Promise<void> => {
+  const searchIndex = createSearchIndex(product.name);
+
+  const searchableProduct: TProductApi = { ...product, searchIndex };
+
+  await setDoc(doc(db, FIRESTORE_COLLECTIONS.products, searchableProduct.id), searchableProduct);
+};
+
+export const getProduct = async (id: string): Promise<TProductApi | null> => {
+  const docRef = doc(db, FIRESTORE_COLLECTIONS.products, id);
   const docSnap = await getDoc(docRef);
 
   if (!docSnap.exists()) {
     return null;
   }
 
-  return docSnap.data() as TProduct;
+  return docSnap.data() as TProductApi;
 };
 
-export const addProduct = async (product: TProduct): Promise<void> => {
-  await setDoc(doc(db, 'products', product.id), product);
+export const getProductsCount = async (params: TProductsQueryParams) => {
+  const { category, term } = params;
+
+  let q = query(collection(db, FIRESTORE_COLLECTIONS.products), orderBy('name'));
+
+  if (category === null && term == null) {
+    return 0;
+  }
+
+  if (category) {
+    q = query(q, where('category', '==', category));
+  }
+
+  if (term !== null) {
+    const searchTerms = getSoundexTerms(term);
+
+    q = query(q, where('searchIndex', 'array-contains', searchTerms));
+  }
+
+  const count = await getCountFromServer(q);
+
+  return count.data().count;
 };
 
-export const getAllProducts = async (): Promise<TProduct[] | null> => {
-  const collectionRef = collection(db, 'products');
-  const collectionSnap = await getDocs(collectionRef);
+export const getProducts = async (params: TProductsParams): Promise<TProductsReturnValue> => {
+  const {
+    queryParams: { term, category },
+    startAfterDoc,
+    limitPerPage = 12,
+    orderByField = 'name',
+  } = params;
 
-  return collectionSnap.docs.map((doc) => doc.data() as TProduct);
-};
+  let q = query(collection(db, FIRESTORE_COLLECTIONS.products), orderBy(orderByField), limit(limitPerPage));
 
-export const getCategoryProducts = async (category: string): Promise<TProduct[] | null> => {
-  const q = query(collection(db, 'products'), where('category', '==', category));
+  if (category === null && term == null) {
+    return { products: null, lastDoc: null };
+  }
+
+  if (category !== null) {
+    q = query(q, where('category', '==', category));
+  }
+
+  if (term !== null) {
+    const searchTerms = getSoundexTerms(term);
+
+    q = query(q, where('searchIndex', 'array-contains', searchTerms));
+  }
+
+  if (startAfterDoc !== null) {
+    q = query(q, startAfter(startAfterDoc));
+  }
+
   const querySnapshot = await getDocs(q);
 
-  return querySnapshot.docs.map((doc) => doc.data() as TProduct);
+  return {
+    products: querySnapshot.docs.map((doc) => doc.data() as TProductApi),
+    lastDoc: querySnapshot.docs[querySnapshot.docs.length - 1],
+  };
 };

@@ -1,13 +1,22 @@
-.ProductPage {
-}
-
 .Main {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-areas:
+    "gallery"
+    "content";
   column-gap: $space-32;
+
+  @media screen and (width > #{$bp-sm-768}) {
+    grid-template-areas: "gallery content";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.Gallery {
+  grid-area: gallery;
 }
 
 .Content {
+  grid-area: content;
   display: flex;
   gap: $space-16;
   flex-direction: column;

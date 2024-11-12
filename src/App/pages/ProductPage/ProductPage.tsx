@@ -1,25 +1,32 @@
-import classNames from 'classnames';
+import { observer } from 'mobx-react-lite';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Button from 'components/Button';
 import Skeleton from 'components/Skeleton';
 import Text from 'components/Text';
-import { useGetProduct } from 'hooks';
+import ProductStore from 'store/ProductStore';
+import { Meta } from 'store/types';
+import { useLocalStore } from 'utils/useLocalStore';
 import ProductGallery from './components/ProductGallery';
 import styles from './ProductPage.module.scss';
 
 const ProductPage = () => {
   const { id } = useParams();
 
-  const { product, isPending } = useGetProduct(id as string);
+  const productStore = useLocalStore(() => new ProductStore());
 
-  const cn = classNames(styles['ProductPage']);
+  const { product, meta } = productStore;
+
+  useEffect(() => {
+    productStore.loadProduct(id);
+  }, [productStore, id]);
 
   return (
-    <div className={cn}>
-      {isPending && <Skeleton />}
+    <div>
+      {meta === Meta.loading && <Skeleton />}
       {product && (
         <div className={styles['Main']}>
-          <ProductGallery imgUrls={product.imgUrls} />
+          <ProductGallery product={product} className={styles['Gallery']} />
           <div className={styles['Content']}>
             <Text className={styles['Name']} view="heading">
               {product.name}
@@ -46,4 +53,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default observer(ProductPage);
