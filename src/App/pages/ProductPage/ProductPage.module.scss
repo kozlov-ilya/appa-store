@@ -1,0 +1,25 @@
+.ProductPage {
+}
+
+.Main {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  column-gap: $space-32;
+}
+
+.Content {
+  display: flex;
+  gap: $space-16;
+  flex-direction: column;
+}
+
+.DescriptionContainer {
+  display: flex;
+  gap: $space-8;
+  flex-direction: column;
+}
+
+.Actions {
+  display: flex;
+  gap: $space-16;
+}
