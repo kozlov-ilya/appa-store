@@ -20,7 +20,7 @@ const ProductList = () => {
       </div>
       <InfiniteScroll
         dataLength={products.length}
-        next={() => loadProducts()}
+        next={loadProducts}
         hasMore={productsCount - products.length > 0}
         loader={null}
         className={styles['ProductList']}

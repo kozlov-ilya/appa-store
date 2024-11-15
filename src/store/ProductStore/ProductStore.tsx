@@ -11,7 +11,7 @@ export default class ProductStore implements ILocalStore {
 
   constructor() {
     makeObservable<ProductStore, PrivateFields>(this, {
-      _product: observable,
+      _product: observable.ref,
       _meta: observable,
       product: computed,
       meta: computed,

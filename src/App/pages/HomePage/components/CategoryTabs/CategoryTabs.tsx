@@ -1,12 +1,13 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import { observer } from 'mobx-react-lite';
+import { useCallback } from 'react';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
 import { NAMED_CATEGORIES } from 'config/consts';
 import { useMatchMedia } from 'hooks';
 import { useSearchQuery } from 'hooks/useSearchQuery';
 import rootStore from 'store/RootStore';
-import { Meta } from 'store/types';
+import { Meta, TNamedCategory } from 'store/types';
 import Tab from './components/Tab';
 import styles from './CategoryTabs.module.scss';
 
@@ -19,13 +20,20 @@ const CategoryTabs = () => {
 
   const [emblaRef] = useEmblaCarousel({ dragFree: true });
 
+  const handleTabClick = useCallback(
+    (category: TNamedCategory) => {
+      setQueryParam('category', category.category);
+    },
+    [setQueryParam],
+  );
+
   const Tabs = NAMED_CATEGORIES.map((category) => (
     <Tab
       key={category.category}
       category={category}
       isActive={searchQueryStore.getParam('category') === category.category}
       disabled={productsStore.meta === Meta.loading || productsStore.meta === Meta.initial}
-      onClick={() => setQueryParam('category', category.category)}
+      onTabClick={handleTabClick}
     />
   ));
 

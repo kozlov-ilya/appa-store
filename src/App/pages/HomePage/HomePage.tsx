@@ -1,4 +1,3 @@
-import { observer } from 'mobx-react-lite';
 import ProductList from 'components/ProductList';
 import CategoryTabs from './components/CategoryTabs';
 import styles from './HomePage.module.scss';
@@ -16,4 +15,4 @@ const HomePage = () => {
   );
 };
 
-export default observer(HomePage);
+export default HomePage;
