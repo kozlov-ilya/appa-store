@@ -1,7 +1,7 @@
 import { useState, useLayoutEffect } from 'react';
-import { breakpoints } from 'configs/consts';
+import { BREAKPOINTS } from 'config/consts';
 
-const { sm, lg } = breakpoints;
+const { sm, lg } = BREAKPOINTS;
 
 const queries = [
   { value: 'isMobile', query: `(width <= ${sm}px)` },

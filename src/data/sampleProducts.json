@@ -68,6 +68,22 @@
     "imgUrls": ["/tshirts/moscow_1.jpg", "/tshirts/moscow_2.jpg", "/tshirts/moscow_3.jpg", "/tshirts/moscow_4.jpg"]
   },
   {
+    "name": "Футболка FLYERS RINGER",
+    "category": "tshirts",
+    "brand": "Brain Dead",
+    "description": "- Лос-анджелесский проект с уникальной интерпретацией культурного ландшафта - 100% хлопок - Прямой крой - Опущенные плечи - Вышитый артворк на груди - Винтажная эстетика - Дополнит базовый гардероб",
+    "price": 8900,
+    "imgUrls": ["/tshirts/brain_1.jpg", "/tshirts/brain_2.jpg"]
+  },
+  {
+    "name": "Футболка COW",
+    "category": "tshirts",
+    "brand": "New Amsterdam Surf Association",
+    "description": "- Амстердамский сёрферский бренд - 100% хлопок. Мерсеризованный джерси – гладкий и немнущийся материал обеспечивает лучшее сохранение цвета, повышенную устойчивость к разрыву и истиранию, а также яркую отделку - Свободный крой - Опущенные плечи - Печатный артворк на груди, изображающий убегающую от шторма корову - Минималистичная эстетика - Дополнит базовый гардероб",
+    "price": 9200,
+    "imgUrls": ["/tshirts/cow_1.jpg", "/tshirts/cow_2.jpg"]
+  },
+  {
     "name": "Кепка WOOL",
     "category": "accesories",
     "brand": "Addict Clothes",

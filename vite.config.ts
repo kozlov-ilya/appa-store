@@ -14,8 +14,11 @@ export default defineConfig({
       assets: '/src/assets',
       configs: '/src/configs',
       hooks: '/src/hooks',
-      types: '/src/types',
       api: '/src/api',
+      store: '/src/store',
+      config: '/src/config',
+      contexts: '/src/contexts',
+      utils: '/src/utils',
     },
   },
 

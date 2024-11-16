@@ -20,6 +20,8 @@
   cursor: var(--button-cursor, pointer);
   user-select: none;
 
+  -webkit-tap-highlight-color: transparent;
+
   /* --------------------------------- variant -------------------------------- */
   &_variant_solid {
     --button-bg: var(--color-bg-contrast);

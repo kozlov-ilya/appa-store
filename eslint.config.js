@@ -44,6 +44,7 @@ export default tseslint.config(
           ],
         },
       ],
+      'react-refresh/only-export-components': 'off',
     },
     settings: {
       'import/parsers': {

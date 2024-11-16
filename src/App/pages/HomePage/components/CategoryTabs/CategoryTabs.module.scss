@@ -2,12 +2,27 @@
   display: flex;
   gap: $space-8;
   justify-content: center;
-}
 
-.TabButton {
-  min-width: 125px;
+  @media screen and (width > #{$bp-sm-768}) {
+    flex-wrap: wrap;
+  }
 }
 
 .FiltersButton {
   color: var(--color-text-primary);
+  flex-shrink: 0;
+
+  @media screen and (width > #{$bp-sm-768}) {
+    flex-wrap: wrap;
+    order: 1;
+  }
+}
+
+.Viewport {
+  overflow: hidden;
+}
+
+.Container {
+  display: flex;
+  gap: $space-8;
 }

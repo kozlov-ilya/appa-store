@@ -1,40 +1,54 @@
-import classNames from 'classnames';
-import { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import useEmblaCarousel from 'embla-carousel-react';
+import { observer } from 'mobx-react-lite';
+import { useCallback } from 'react';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
-import { categories } from 'configs/consts';
+import { NAMED_CATEGORIES } from 'config/consts';
+import { useMatchMedia } from 'hooks';
+import { useSearchQuery } from 'hooks/useSearchQuery';
+import rootStore from 'store/RootStore';
+import { Meta, TNamedCategory } from 'store/types';
+import Tab from './components/Tab';
 import styles from './CategoryTabs.module.scss';
 
 const CategoryTabs = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { isMobile } = useMatchMedia();
 
-  const currentCategory = searchParams.get('category') || 'jackets';
+  const { setQueryParam } = useSearchQuery();
 
-  useEffect(() => {
-    if (!searchParams.get('category')) {
-      setSearchParams({ category: 'jackets' });
-    }
-  }, [searchParams, setSearchParams]);
+  const { searchQueryStore, productsStore } = rootStore;
 
-  const cn = classNames(styles['CategoryTabs']);
+  const [emblaRef] = useEmblaCarousel({ dragFree: true });
+
+  const handleTabClick = useCallback(
+    (category: TNamedCategory) => {
+      setQueryParam('category', category.category);
+    },
+    [setQueryParam],
+  );
+
+  const Tabs = NAMED_CATEGORIES.map((category) => (
+    <Tab
+      key={category.category}
+      category={category}
+      isActive={searchQueryStore.getParam('category') === category.category}
+      disabled={productsStore.meta === Meta.loading || productsStore.meta === Meta.initial}
+      onTabClick={handleTabClick}
+    />
+  ));
 
   return (
-    <div className={cn}>
-      {categories.map((category) => (
-        <Button
-          className={styles['TabButton']}
-          text={category.name}
-          variant={currentCategory === category.value ? 'solid' : 'soft'}
-          key={category.value}
-          onClick={() => {
-            setSearchParams({ category: category.value });
-          }}
-        />
-      ))}
+    <div className={styles['CategoryTabs']}>
       <Button className={styles['FiltersButton']} variant="soft" leftContent={<Icon icon="Sliders" size={18} />} />
+      {isMobile ? (
+        <div className={styles['Viewport']} ref={emblaRef}>
+          <div className={styles['Container']}>{Tabs}</div>
+        </div>
+      ) : (
+        Tabs
+      )}
     </div>
   );
 };
 
-export default CategoryTabs;
+export default observer(CategoryTabs);
