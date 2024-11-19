@@ -1,18 +1,46 @@
+import { observer } from 'mobx-react-lite';
+import { MouseEventHandler, useCallback } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { Link } from 'react-router-dom';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
+import ProductImage from 'components/ProductImage';
 import Text from 'components/Text';
+import { useCart } from 'hooks';
 import { TProduct } from 'store/types';
-import ProductImage from '../ProductImage';
+import { formatToCurrency } from 'utils/formatToCurrency';
 import styles from './ProductCard.module.scss';
 
 export type ProductCardProps = React.ComponentPropsWithoutRef<'div'> & {
   product?: TProduct;
+  inCart?: boolean;
 };
 
 const ProductCard: React.FC<ProductCardProps> = (props) => {
-  const { product, ...rest } = props;
+  const { product, inCart, ...rest } = props;
+
+  const {
+    store: { addProductToCart, removeProductFromCart },
+  } = useCart();
+
+  const handleCartButtonClick: MouseEventHandler<HTMLButtonElement> = useCallback(
+    (event) => {
+      event.stopPropagation();
+
+      if (!product) {
+        return;
+      }
+
+      if (inCart) {
+        removeProductFromCart(product.id);
+
+        return;
+      }
+
+      addProductToCart(product);
+    },
+    [inCart, removeProductFromCart, addProductToCart, product],
+  );
 
   return (
     <div className={styles['ProductCard']} {...rest}>
@@ -31,7 +59,7 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
                 {product.name}
               </Text>
               <Text view="p-18" weight="medium">
-                {`₽ ${product.price}`}
+                {`₽ ${formatToCurrency(product.price)}`}
               </Text>
             </>
           ) : (
@@ -44,11 +72,9 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
         {product ? (
           <Button
             className={styles['CartButton']}
-            variant="ghost"
+            variant={inCart ? 'solid' : 'ghost'}
             leftContent={<Icon icon="ShoppingBag" size={22} />}
-            onClick={(event) => {
-              event.stopPropagation();
-            }}
+            onClick={handleCartButtonClick}
           />
         ) : (
           <Skeleton containerClassName={styles['CartButtonSkeleton']} />
@@ -59,4 +85,4 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
   );
 };
 
-export default ProductCard;
+export default observer(ProductCard);

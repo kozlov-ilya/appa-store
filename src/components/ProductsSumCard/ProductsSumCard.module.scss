@@ -1,0 +1,35 @@
+.ProductsSumCard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-24;
+
+  min-width: 300px;
+  height: fit-content;
+  padding: $space-16;
+  border: 2px solid var(--color-bg-soft);
+  border-radius: $radius-12;
+}
+
+.ProductList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-12;
+}
+
+.Details {
+  display: flex;
+  flex-direction: column;
+  gap: $space-16;
+}
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  gap: $space-24;
+}
+
+.InfoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

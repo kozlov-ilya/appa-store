@@ -1,4 +1,4 @@
-import ProductList from 'components/ProductList';
+import ProductCardList from 'components/ProductCardList';
 import CategoryTabs from './components/CategoryTabs';
 import styles from './HomePage.module.scss';
 
@@ -9,7 +9,7 @@ const HomePage = () => {
         <CategoryTabs />
       </div>
       <div className={styles['ProductListContainer']}>
-        <ProductList />
+        <ProductCardList />
       </div>
     </div>
   );

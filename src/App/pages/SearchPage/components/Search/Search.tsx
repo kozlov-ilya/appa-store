@@ -1,7 +1,7 @@
 import { FormEvent, useCallback, useState } from 'react';
 import Icon from 'components/Icon';
 import TextField from 'components/TextField';
-import { useSearchQuery } from 'hooks/useSearchQuery';
+import { useSearchQuery } from 'hooks';
 import styles from './Search.module.scss';
 
 const Search = () => {

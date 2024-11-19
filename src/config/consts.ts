@@ -18,8 +18,10 @@ export const DEFAULT_CATEGORY: TNamedCategory = { name: 'Куртки', category
 
 export const ROUTES = {
   home: '/',
-  search: '/search',
   product: '/product/',
+  search: '/search',
+  cart: '/cart',
+  newOrder: '/order',
 } as const;
 
 export const FIRESTORE_COLLECTIONS = {

@@ -22,7 +22,13 @@ const Header = () => {
           variant="ghost"
           leftContent={<Icon icon="Search" size={18} />}
         />
-        <Button text={!isMobile ? 'Корзина' : ''} variant="ghost" leftContent={<Icon icon="ShoppingBag" size={18} />} />
+        <Button
+          text={!isMobile ? 'Корзина' : ''}
+          component="a"
+          to={ROUTES.cart}
+          variant="ghost"
+          leftContent={<Icon icon="ShoppingBag" size={18} />}
+        />
         {!isMobile && <Button text={'Войти'} variant="ghost" leftContent={<Icon icon="User" size={18} />} />}
         {isMobile && <Button variant="ghost" leftContent={<Icon icon="Burger" size={18} />} />}
       </div>
