@@ -1,5 +1,5 @@
 import { DocumentSnapshot, OrderByDirection } from 'firebase/firestore';
-import { TProductApi, TProductsQueryParams } from 'store/types';
+import { TLoginForm, TProductApi, TProductsQueryParams, TRegisterForm } from 'store/types';
 
 export type TProductsParams = {
   queryParams: TProductsQueryParams;
@@ -13,3 +13,7 @@ export type TProductsReturnValue = {
   products: TProductApi[] | null;
   lastDoc: DocumentSnapshot | null;
 };
+
+export type TLoginData = TLoginForm;
+
+export type TRegisterData = TRegisterForm;

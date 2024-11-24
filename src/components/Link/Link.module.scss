@@ -1,0 +1,17 @@
+.Link {
+  font: inherit;
+
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &_color_primary {
+    color: var(--color-text-primary);
+  }
+
+  &_color_accent {
+    color: var(--color-link-accent);
+  }
+}

@@ -6,9 +6,9 @@ import importPlugin from 'eslint-plugin-import';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import reactPlugin from 'eslint-plugin-react';
 
-export default tseslint.config(
-  { ignores: ['dist'] },
-  {
+export default [
+  ...tseslint.config({
+    ignores: ['dist'],
     extends: [js.configs.recommended, ...tseslint.configs.recommended, eslintPluginPrettierRecommended],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -64,5 +64,5 @@ export default tseslint.config(
         version: 'detect',
       },
     },
-  },
-);
+  }),
+];

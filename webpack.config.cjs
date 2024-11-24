@@ -45,25 +45,18 @@ const getStylesLoaders = (withModules = false) => {
   ];
 };
 
+const generateAliases = (aliases) => aliases.reduce((acc, val) => ({ ...acc, [val]: path.join(srcPath, val) }), {});
+
 module.exports = {
-  target: !isProd ? 'web' : 'browserslist',
+  target: 'web',
+  mode: isProd ? 'production' : 'development',
 
   entry: path.resolve(srcPath, 'main.tsx'),
-  output: { path: bundlePath, filename: 'bundle.js', clean: true },
+  output: { path: bundlePath, filename: '[name].[contenthash].js', clean: true, publicPath: '/' },
 
   resolve: {
     extensions: ['.tsx', '.jsx', '.ts', '.js'],
-
-    alias: {
-      api: path.join(srcPath, 'api'),
-      components: path.join(srcPath, 'components'),
-      config: path.join(srcPath, 'config'),
-      hooks: path.join(srcPath, 'hooks'),
-      providers: path.join(srcPath, 'providers'),
-      store: path.join(srcPath, 'store'),
-      styles: path.join(srcPath, 'styles'),
-      utils: path.join(srcPath, 'utils'),
-    },
+    alias: generateAliases(['api', 'components', 'config', 'hooks', 'providers', 'store', 'styles', 'utils', 'routes']),
   },
 
   module: {
@@ -107,7 +100,7 @@ module.exports = {
       }),
     new TsCheckerPlugin(),
     new EslintWebpackPlugin(),
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
     !isProd && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
 

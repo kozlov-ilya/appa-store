@@ -1,0 +1,38 @@
+.ProfileHeader {
+  display: flex;
+  align-items: center;
+
+  min-height: 85px;
+  padding-block: $space-16;
+  padding-inline: $space-8;
+  border: 2px solid var(--color-bg-soft);
+  border-radius: $radius-12;
+
+  @media screen and (width > #{$bp-sm-768}) {
+    padding-inline: $space-24;
+  }
+}
+
+.Avatar {
+  flex-shrink: 0;
+}
+
+.UserInfo {
+  display: flex;
+  flex-direction: column;
+  margin-left: $space-16;
+
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Actions {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.LoaderContainer {
+  display: flex;
+  align-items: center;
+}

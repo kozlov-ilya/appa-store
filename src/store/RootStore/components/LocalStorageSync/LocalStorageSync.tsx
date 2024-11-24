@@ -3,12 +3,14 @@ import rootStore from 'store/RootStore';
 
 const LocalStorageSync = () => {
   const { localStorage, loadLocalStorage } = rootStore.localStorageStore;
-  const { loadCart } = rootStore.cartStore;
+  const { loadCartFromLocal } = rootStore.cartStore;
+  const { loadNewOrderProductsFromLocal } = rootStore.orderStore;
 
   useEffect(() => {
     loadLocalStorage();
 
-    loadCart(localStorage.cart);
+    loadCartFromLocal(localStorage.cart);
+    loadNewOrderProductsFromLocal(localStorage.order);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

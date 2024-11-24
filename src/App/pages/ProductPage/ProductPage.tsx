@@ -1,17 +1,29 @@
 import { observer } from 'mobx-react-lite';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Button from 'components/Button';
-import Skeleton from 'components/Skeleton';
+import Icon from 'components/Icon';
+import Loader from 'components/Loader';
 import Text from 'components/Text';
+import { useCart, useOrder } from 'hooks';
+import { ROUTES } from 'routes';
 import ProductStore from 'store/ProductStore';
 import { Meta } from 'store/types';
+import { formatToCurrency } from 'utils/formatToCurrency';
 import { useLocalStore } from 'utils/useLocalStore';
 import ProductGallery from './components/ProductGallery';
 import styles from './ProductPage.module.scss';
 
 const ProductPage = () => {
   const { id } = useParams();
+
+  const {
+    store: { setNewOrderProducts },
+  } = useOrder();
+
+  const {
+    store: { addProductToCart, removeProductFromCart, cart },
+  } = useCart();
 
   const productStore = useLocalStore(() => new ProductStore());
 
@@ -21,9 +33,37 @@ const ProductPage = () => {
     productStore.loadProduct(id);
   }, [productStore, id]);
 
+  const inCart = !!cart.find((p) => p.product.id === product?.id);
+
+  const handleCartButtonClick = useCallback(() => {
+    if (!product) {
+      return;
+    }
+
+    if (inCart) {
+      removeProductFromCart(product.id);
+
+      return;
+    }
+
+    addProductToCart(product);
+  }, [addProductToCart, product, removeProductFromCart, inCart]);
+
+  const handleOrderButtonClick = useCallback(() => {
+    if (!product) {
+      return;
+    }
+
+    setNewOrderProducts([{ product, count: 1 }]);
+  }, [setNewOrderProducts, product]);
+
   return (
     <div>
-      {meta === Meta.loading && <Skeleton />}
+      {meta === Meta.loading && (
+        <div className={styles['LoaderContainer']}>
+          <Loader size="lg" />
+        </div>
+      )}
       {product && (
         <div className={styles['Main']}>
           <ProductGallery product={product} className={styles['Gallery']} />
@@ -32,7 +72,7 @@ const ProductPage = () => {
               {product.name}
             </Text>
             <Text className={styles['Price']} view="title">
-              {`₽ ${product.price}`}
+              {`₽ ${formatToCurrency(product.price)}`}
             </Text>
             <div className={styles['DescriptionContainer']}>
               <Text view="p-16" weight="medium">
@@ -43,8 +83,22 @@ const ProductPage = () => {
               </Text>
             </div>
             <div className={styles['Actions']}>
-              <Button text="Корзина" variant="soft" stretched size="lg" />
-              <Button text="Оплатить" stretched size="lg" />
+              <Button
+                text={inCart ? 'Убрать' : 'Добавить'}
+                variant={inCart ? 'solid' : 'soft'}
+                stretched
+                size="lg"
+                onClick={handleCartButtonClick}
+                leftContent={<Icon icon="ShoppingBag" />}
+              />
+              <Button
+                text="Оформить"
+                stretched
+                size="lg"
+                onClick={handleOrderButtonClick}
+                component="a"
+                to={`${ROUTES.newOrder}`}
+              />
             </div>
           </div>
         </div>

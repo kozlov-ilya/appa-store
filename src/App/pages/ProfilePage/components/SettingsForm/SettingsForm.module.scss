@@ -1,0 +1,29 @@
+.SettingsForm {
+}
+
+.Fields {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+
+  margin-top: $space-12;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  min-height: 40px;
+}
+
+.SaveButton {
+  min-width: 150px;
+}
+
+.LoaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 300px;
+}

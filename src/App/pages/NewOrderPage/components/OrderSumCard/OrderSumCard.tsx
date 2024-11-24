@@ -1,25 +1,14 @@
 import { observer } from 'mobx-react-lite';
-import { useCallback } from 'react';
-import Button from 'components/Button';
 import ProductsSumCard from 'components/ProductsSumCard';
 import { useOrder } from 'hooks';
 
 const OrderSumCard = () => {
   const {
-    store: { orderProducts, submitOrder },
+    store: { newOrderProducts },
+    isNewOrderProductsLoading,
   } = useOrder();
 
-  const handlePayButtonClick = useCallback(() => {
-    submitOrder();
-  }, [submitOrder]);
-
-  return (
-    <ProductsSumCard
-      countedProducts={orderProducts}
-      showProducts
-      ActionButton={<Button text="Оплатить" onClick={handlePayButtonClick} size="lg" />}
-    />
-  );
+  return <ProductsSumCard countedProducts={newOrderProducts} showProducts isLoading={isNewOrderProductsLoading} />;
 };
 
 export default observer(OrderSumCard);

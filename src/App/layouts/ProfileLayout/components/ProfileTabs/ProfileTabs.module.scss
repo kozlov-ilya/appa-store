@@ -1,0 +1,10 @@
+.ProfileTabs {
+  display: flex;
+  gap: $space-4;
+
+  min-width: 200px;
+
+  @media screen and (width > #{$bp-sm-768}) {
+    flex-direction: column;
+  }
+}

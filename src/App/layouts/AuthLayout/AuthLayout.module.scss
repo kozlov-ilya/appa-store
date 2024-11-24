@@ -1,0 +1,37 @@
+.AuthLayout {
+  background: var(--color-bg-secondary);
+}
+
+.Content {
+  display: grid;
+  align-content: center;
+  gap: $space-32;
+
+  height: 100svh;
+
+  @media screen and (width > #{$bp-sm-768}) {
+    grid-template-columns: 1fr 1fr;
+    padding: $space-32;
+  }
+}
+
+.FormContainer {
+  width: 100%;
+}
+
+.ImageContainer {
+  min-height: 100%;
+  display: none;
+
+  @media screen and (width > #{$bp-sm-768}) {
+    display: block;
+  }
+}
+
+.Image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: $radius-16;
+  user-select: none;
+}

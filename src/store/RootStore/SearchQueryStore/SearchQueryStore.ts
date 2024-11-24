@@ -1,6 +1,7 @@
 import { action, makeObservable, observable } from 'mobx';
 import { parse, stringify } from 'qs';
-import { DEFAULT_CATEGORY, ROUTES } from 'config/consts';
+import { DEFAULT_CATEGORY } from 'config/consts';
+import { ROUTES } from 'routes';
 import { isCategory, TCategory, TSearchParams, TSearchParamsKey } from 'store/types';
 
 type PrivateFields = '_params';

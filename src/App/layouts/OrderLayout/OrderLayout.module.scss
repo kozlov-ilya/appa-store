@@ -1,14 +1,10 @@
-.NewOrderLayout {
+.OrderLayout {
   display: grid;
-  grid-template-areas:
-    "main"
-    "side";
   gap: $space-32;
 
   margin-top: $space-16;
 
   @media screen and (width > #{$bp-sm-768}) {
-    grid-template-areas: "main side";
     grid-template-columns: 2fr 1fr;
 
     margin-top: $space-32;

@@ -3,6 +3,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin: 0;
+  text-wrap: pretty;
 
   color: inherit;
 
@@ -33,7 +34,7 @@
 
   &_view_button {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 20px;
   }
 
   &_view_p-24 {

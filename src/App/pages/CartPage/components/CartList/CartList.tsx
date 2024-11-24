@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import { Fragment } from 'react/jsx-runtime';
 import Divider from 'components/Divider';
+import Loader from 'components/Loader';
 import ProductListItem from 'components/ProductListItem';
 import Text from 'components/Text';
 import { useCart } from 'hooks';
@@ -14,14 +15,19 @@ const CartList = () => {
 
   return (
     <div className={styles['CartList']}>
-      <Text view="p-24">Корзина</Text>
-      {isLoading &&
-        Array.from(Array(5)).map((_, ind) => (
-          <Fragment key={ind}>
-            <Divider />
-            <ProductListItem />
-          </Fragment>
-        ))}
+      <Text view="p-24">{`Корзина [ ${cart.length} ]`}</Text>
+      {isLoading && (
+        <div className={styles['LoaderContainer']}>
+          <Loader size="lg" />
+        </div>
+      )}
+      {!cart.length && !isLoading && (
+        <div className={styles['CartPlaceholder']}>
+          <Text view="p-20" color="secondary">
+            В корзине нет товаров
+          </Text>
+        </div>
+      )}
       {cart.map(({ product }) => (
         <Fragment key={product.id}>
           <Divider />

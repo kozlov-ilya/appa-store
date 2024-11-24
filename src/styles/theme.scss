@@ -12,12 +12,17 @@
   --color-bg-soft-hover: #{map.get($light, grayA4)};
   --color-bg-soft-active: #{map.get($light, grayA5)};
   --color-bg-disabled: #{map.get($light, grayA3)};
+  --color-bg-danger: #{map.get($light, red4)};
 
   --color-text-primary: #{map.get($light, gray12)};
   --color-text-secondary: #{map.get($light, gray11)};
   --color-text-accent: #{map.get($light, green11)};
   --color-text-contrast: #{map.get($light, gray1)};
   --color-text-disabled: #{map.get($light, gray8)};
+
+  --color-link-accent: #{map.get($light, blue11)};
+
+  --color-accent-danger: #{map.get($light, red9)};
 }
 
 :root[data-theme="dark"] {
@@ -30,10 +35,15 @@
   --color-bg-soft-hover: #{map.get($dark, grayA4)};
   --color-bg-soft-active: #{map.get($dark, grayA5)};
   --color-bg-disabled: #{map.get($dark, grayA3)};
+  --color-bg-danger: #{map.get($dark, red11)};
 
   --color-text-primary: #{map.get($dark, gray12)};
   --color-text-secondary: #{map.get($dark, gray11)};
   --color-text-accent: #{map.get($dark, green11)};
   --color-text-contrast: #{map.get($dark, gray1)};
   --color-text-disabled: #{map.get($dark, gray8)};
+
+  --color-link-accent: #{map.get($dark, blue11)};
+
+  --color-accent-danger: #{map.get($dark, red9)};
 }

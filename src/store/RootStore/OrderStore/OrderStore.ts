@@ -1,92 +1,153 @@
-import { action, computed, makeObservable, observable } from 'mobx';
-import { TNewOrder, TNewOrderFieldsKey } from 'store/types';
+import { action, computed, makeObservable, observable, runInAction } from 'mobx';
+import { customAlphabet } from 'nanoid';
+import { addOrderApi, getOrdersByIdsApi } from 'api/order';
+import { getProductsByIds } from 'api/product';
+import {
+  Meta,
+  normalizeProduct,
+  OrderErrorMessages,
+  OrderSuccessMessages,
+  TCountedProduct,
+  TLocalStorageOrder,
+  TOrder,
+  TOrderProducts,
+  TOrderResponse,
+} from 'store/types';
 import RootStore from '../RootStore';
 
-type PrivateFields = '_order';
+type PrivateFields = '_newOrderProducts' | '_newOrderMeta' | '_userOrders' | '_userOrdersMeta';
 
 export default class OrderStore {
   private _rootStore: RootStore;
 
-  private _order: TNewOrder = {
-    orderProducts: [],
-    fields: {
-      name: {
-        value: '',
-        error: '',
-      },
-      email: {
-        value: '',
-        error: '',
-      },
-    },
-  };
+  private _newOrderProducts: TOrderProducts = [];
+  private _newOrderMeta: Meta = Meta.initial;
+
+  private _userOrders: TOrder[] = [];
+  private _userOrdersMeta: Meta = Meta.initial;
 
   constructor(rootStore: RootStore) {
     makeObservable<OrderStore, PrivateFields>(this, {
-      _order: observable,
-      orderProducts: computed,
-      name: computed,
-      email: computed,
-      setOrderFieldValue: action.bound,
-      setOrderFieldError: action.bound,
-      resetOrderFieldsErrors: action.bound,
-      loadOrderProductsFromCart: action.bound,
-      submitOrder: action.bound,
+      _newOrderProducts: observable,
+      _newOrderMeta: observable,
+      _userOrders: observable,
+      _userOrdersMeta: observable,
+
+      newOrderProducts: computed,
+      newOrderMeta: computed,
+      userOrders: computed,
+      userOrdersMeta: computed,
+
+      resetNewOrder: action.bound,
+      setNewOrderProducts: action.bound,
+      loadNewOrderProductsFromLocal: action.bound,
+      loadNewOrderProductsFromCart: action.bound,
+      loadUserOrders: action.bound,
+      addUserOrder: action.bound,
     });
 
     this._rootStore = rootStore;
   }
 
-  get orderProducts() {
-    return this._order.orderProducts;
+  get newOrderProducts() {
+    return this._newOrderProducts;
   }
 
-  get name() {
-    return this._order.fields.name;
+  get newOrderMeta() {
+    return this._newOrderMeta;
   }
 
-  get email() {
-    return this._order.fields.email;
+  get userOrders() {
+    return this._userOrders;
   }
 
-  setOrderFieldValue(key: TNewOrderFieldsKey, value: string) {
-    this._order.fields[key].value = value;
+  get userOrdersMeta() {
+    return this._userOrdersMeta;
   }
 
-  setOrderFieldError(key: TNewOrderFieldsKey, error: string) {
-    this._order.fields[key].error = error;
+  resetNewOrder() {
+    this._newOrderProducts = [];
+    this._newOrderMeta = Meta.initial;
   }
 
-  resetOrderFieldsErrors() {
-    this.setOrderFieldError('name', '');
-    this.setOrderFieldError('email', '');
+  setNewOrderProducts(products: TCountedProduct[]) {
+    this._newOrderProducts = products;
   }
 
-  resetOrderProducts() {
-    this._order.orderProducts = [];
-  }
-
-  loadOrderProductsFromCart() {
-    this._order.orderProducts = this._rootStore.cartStore.cart;
-  }
-
-  submitOrder() {
-    let dataValid = true;
-
-    this.resetOrderFieldsErrors();
-
-    if (!this.name.value) {
-      this.setOrderFieldError('name', 'Имя является обязательным полем!');
-      dataValid = false;
-    }
-
-    if (!this.email.value) {
-      this.setOrderFieldError('email', 'Email является обязательным полем!');
-      dataValid = false;
-    }
-
-    if (!dataValid) {
+  async loadNewOrderProductsFromLocal(localOrderProducts: TLocalStorageOrder) {
+    if (!localOrderProducts.length) {
       return;
+    }
+
+    this._newOrderMeta = Meta.loading;
+
+    try {
+      const products = await getProductsByIds(localOrderProducts.map((item) => item.id));
+
+      runInAction(() => {
+        this._newOrderProducts = localOrderProducts.map(({ id, count }) => ({
+          product: normalizeProduct(products.find((p) => p.id === id)!),
+          count,
+        }));
+        this._newOrderMeta = Meta.success;
+      });
+    } catch {
+      runInAction(() => {
+        this._newOrderProducts = [];
+        this._newOrderMeta = Meta.error;
+      });
+    }
+  }
+
+  loadNewOrderProductsFromCart() {
+    this._newOrderProducts = this._rootStore.cartStore.cart;
+  }
+
+  async loadUserOrders() {
+    const user = this._rootStore.authStore.user;
+
+    if (!user) {
+      return;
+    }
+
+    this._userOrders = [];
+    this._userOrdersMeta = Meta.loading;
+
+    try {
+      const orders = await getOrdersByIdsApi(user.orders);
+
+      runInAction(() => {
+        this._userOrders = orders;
+        this._userOrdersMeta = Meta.success;
+      });
+    } catch {
+      runInAction(() => {
+        this._userOrders = [];
+        this._userOrdersMeta = Meta.error;
+      });
+    }
+  }
+
+  async addUserOrder(order: Omit<TOrder, 'id' | 'products' | 'date'>): Promise<TOrderResponse> {
+    const nanoid = customAlphabet('1234567890', 10);
+    const id = nanoid();
+
+    const newOrder: TOrder = { id, ...order, products: this.newOrderProducts, date: new Date() };
+
+    try {
+      await addOrderApi(newOrder);
+
+      runInAction(() => {
+        this._userOrders = [...this._userOrders, newOrder];
+        this._rootStore.authStore.updateUserOrders(this._userOrders);
+
+        this.resetNewOrder();
+        this._rootStore.cartStore.resetCart();
+      });
+
+      return { order: newOrder, message: OrderSuccessMessages.add };
+    } catch {
+      return { order: null, message: OrderErrorMessages.add };
     }
   }
 }

@@ -3,3 +3,17 @@
   flex-direction: column;
   gap: $space-16;
 }
+
+.LoaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.CartPlaceholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}

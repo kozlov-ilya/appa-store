@@ -12,7 +12,9 @@
 }
 
 .ActionsContainer {
-  margin-left: auto;
   display: flex;
-  gap: $space-4;
+  gap: $space-8;
+  align-items: center;
+
+  margin-left: auto;
 }

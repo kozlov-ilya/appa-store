@@ -1,8 +1,6 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import { observer } from 'mobx-react-lite';
 import { useCallback } from 'react';
-import Button from 'components/Button';
-import Icon from 'components/Icon';
 import { NAMED_CATEGORIES } from 'config/consts';
 import { useMatchMedia, useSearchQuery } from 'hooks';
 import rootStore from 'store/RootStore';
@@ -38,7 +36,7 @@ const CategoryTabs = () => {
 
   return (
     <div className={styles['CategoryTabs']}>
-      <Button className={styles['FiltersButton']} variant="soft" leftContent={<Icon icon="Sliders" size={18} />} />
+      {/* <Button className={styles['FiltersButton']} variant="soft" leftContent={<Icon icon="Sliders" size={18} />} /> */}
       {isMobile ? (
         <div className={styles['Viewport']} ref={emblaRef}>
           <div className={styles['Container']}>{Tabs}</div>

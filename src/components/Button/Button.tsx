@@ -13,6 +13,7 @@ export type ButtonProps = (ButtonAsButtonProps | ButtonAsLinkProps) & {
   radius?: 'none' | 'md' | 'full';
   size?: 'sm' | 'md' | 'lg';
   weight?: 'normal' | 'medium' | 'bold';
+  align?: 'center' | 'start' | 'end';
   leftContent?: React.ReactNode;
   rightContent?: React.ReactNode;
   stretched?: boolean;
@@ -29,6 +30,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     radius = 'full',
     size = 'md',
     weight = 'normal',
+    align = 'center',
     leftContent,
     rightContent,
     stretched,
@@ -43,9 +45,11 @@ const Button: React.FC<ButtonProps> = (props) => {
     styles[`Button_variant_${variant}`],
     styles[`Button_radius_${radius}`],
     styles[`Button_size_${size}`],
+    styles[`Button_align_${align}`],
     {
       [styles[`Button_stretched`]]: stretched,
       [styles[`Button_disabled`]]: disabled,
+      [styles[`Button_loading`]]: loading,
       [styles[`Button_type_icon`]]: !text,
     },
   );

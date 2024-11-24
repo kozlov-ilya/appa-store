@@ -1,0 +1,15 @@
+.OrderDetailsCard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+
+  padding: $space-12;
+  background: var(--color-bg-soft);
+  border-radius: $space-12;
+}
+
+.Line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

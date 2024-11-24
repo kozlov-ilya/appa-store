@@ -1,9 +1,11 @@
 import { observer } from 'mobx-react-lite';
 import { Fragment } from 'react/jsx-runtime';
 import Divider from 'components/Divider';
+import Loader from 'components/Loader';
 import ProductListItem from 'components/ProductListItem';
 import Text from 'components/Text';
 import { TCountedProduct } from 'store/types';
+import { calcProductsCost } from 'utils/calcProductsCost';
 import { formatToCurrency } from 'utils/formatToCurrency';
 import styles from './ProductsSumCard.module.scss';
 
@@ -11,26 +13,29 @@ export type ProductsSumCardProps = {
   countedProducts?: TCountedProduct[];
   showProducts?: boolean;
   ActionButton?: React.ReactNode;
+  isLoading?: boolean;
 };
 
 const ProductsSumCard: React.FC<ProductsSumCardProps> = (props) => {
-  const { countedProducts, showProducts = false, ActionButton } = props;
+  const { countedProducts, showProducts = false, ActionButton, isLoading } = props;
 
-  const sumCost = formatToCurrency(countedProducts?.reduce((sum, cp) => sum + cp.product.price * cp.count, 0) || 0);
+  const sumCost = formatToCurrency(calcProductsCost(countedProducts));
 
   return (
     <div className={styles['ProductsSumCard']}>
-      {showProducts && !!countedProducts?.length && (
+      {showProducts && (
         <div className={styles['ProductList']}>
           <Text weight="medium" view="p-18">
             Товары в заказе
           </Text>
-          {countedProducts.map(({ product }) => (
-            <Fragment key={product.id}>
-              <ProductListItem product={product} />
-              <Divider />
-            </Fragment>
-          ))}
+          {isLoading && <Loader size="lg" className={styles['Loader']} />}
+          {!!countedProducts?.length &&
+            countedProducts.map(({ product }) => (
+              <Fragment key={product.id}>
+                <ProductListItem product={product} />
+                <Divider />
+              </Fragment>
+            ))}
         </div>
       )}
       <div className={styles['Details']}>
