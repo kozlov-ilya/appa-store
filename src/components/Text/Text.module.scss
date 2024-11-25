@@ -22,14 +22,24 @@
 
   /* ---------------------------------- view ---------------------------------- */
   &_view_title {
-    font-size: 44px;
-    line-height: 48px;
-    font-weight: bold;
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: medium;
+
+    @media screen and (width >#{$bp-sm-768}) {
+      font-size: 44px;
+      line-height: 48px;
+    }
   }
 
   &_view_heading {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 32px;
+
+    @media screen and (width > #{$bp-sm-768}) {
+      font-size: 34px;
+      line-height: 40px;
+    }
   }
 
   &_view_button {

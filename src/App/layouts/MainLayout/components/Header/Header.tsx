@@ -1,12 +1,11 @@
 import { observer } from 'mobx-react-lite';
-import { Link } from 'react-router-dom';
 import Avatar from 'components/Avatar';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
 import Loader from 'components/Loader';
 import { useAuth, useMatchMedia } from 'hooks';
 import { ROUTES } from 'routes';
-import { scrollToTop } from 'utils/scrollToTop';
+import Logo from './components/Logo';
 import ThemeSwitch from './components/ThemeSwitch';
 import styles from './Header.module.scss';
 
@@ -20,9 +19,7 @@ const Header = () => {
 
   return (
     <div className={styles['Header']}>
-      <Link to={ROUTES.home} onClick={() => scrollToTop()}>
-        Logo
-      </Link>
+      <Logo />
       <div className={styles['ActionsContainer']}>
         <ThemeSwitch />
         <Button
@@ -50,7 +47,6 @@ const Header = () => {
             leftContent={<Icon icon="User" size={18} />}
           />
         )}
-        {/* {isMobile && <Button variant="ghost" leftContent={<Icon icon="Burger" size={18} />} />} */}
       </div>
     </div>
   );

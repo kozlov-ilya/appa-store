@@ -5,7 +5,7 @@ import Button from 'components/Button';
 import Icon from 'components/Icon';
 import Loader from 'components/Loader';
 import Text from 'components/Text';
-import { useCart, useOrder } from 'hooks';
+import { useCart, useOrder, useScrollToTop } from 'hooks';
 import { ROUTES } from 'routes';
 import ProductStore from 'store/ProductStore';
 import { Meta } from 'store/types';
@@ -57,6 +57,8 @@ const ProductPage = () => {
     setNewOrderProducts([{ product, count: 1 }]);
   }, [setNewOrderProducts, product]);
 
+  useScrollToTop();
+
   return (
     <div>
       {meta === Meta.loading && (
@@ -71,7 +73,7 @@ const ProductPage = () => {
             <Text className={styles['Name']} view="heading">
               {product.name}
             </Text>
-            <Text className={styles['Price']} view="title">
+            <Text className={styles['Price']} view="title" weight="bold">
               {`₽ ${formatToCurrency(product.price)}`}
             </Text>
             <div className={styles['DescriptionContainer']}>

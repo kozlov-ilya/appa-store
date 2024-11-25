@@ -66,7 +66,7 @@ const LoginForm = () => {
   }, [loginWithGoogle]);
 
   return (
-    <form className={styles['LoginForm']} onSubmit={handleSubmit(handleLoginFormSubmit)} autoComplete="off">
+    <form className={styles['LoginForm']} onSubmit={handleSubmit(handleLoginFormSubmit)}>
       <div className={styles['Fields']}>
         <FormField label={FORMFIELD_LABELS.email} errorMessage={errors.email?.message}>
           <TextField
@@ -82,6 +82,8 @@ const LoginForm = () => {
             type="password"
             placeholder={INPUT_PLACEHOLDERS.password}
             disabled={isSubmitting}
+            name="password"
+            autoComplete="on"
           />
         </FormField>
       </div>

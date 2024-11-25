@@ -15,7 +15,7 @@ const CategoryTabs = () => {
 
   const { searchQueryStore, productsStore } = rootStore;
 
-  const [emblaRef] = useEmblaCarousel({ dragFree: true });
+  const [emblaRef] = useEmblaCarousel({ dragFree: true, duration: 20 });
 
   const handleTabClick = useCallback(
     (category: TNamedCategory) => {

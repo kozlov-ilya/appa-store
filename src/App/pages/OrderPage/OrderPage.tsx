@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import { useParams } from 'react-router-dom';
-import { useOrder } from 'hooks';
+import { useOrder, useScrollToTop } from 'hooks';
 import OrderDetailsCard from './components/OrderDetailsCard';
 import OrderProducts from './components/OrderProducts';
 import OrderSumCard from './components/OrderSumCard';
@@ -14,6 +14,8 @@ const OrderPage = () => {
   } = useOrder();
 
   const order = userOrders.find((order) => order.id === id);
+
+  useScrollToTop();
 
   return (
     <>

@@ -83,6 +83,13 @@
     color: var(--color-text-disabled);
     user-select: none;
   }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus {
+    transition:
+      background-color 0s 600000s,
+      color 0s 600000s !important;
+  }
 }
 
 .Box {

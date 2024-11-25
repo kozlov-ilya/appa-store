@@ -45,9 +45,9 @@ export const INPUT_PLACEHOLDERS = {
   phone: 'Введите свой номер телефона',
 };
 
-export const productNumCases = ['товар', 'товара', 'товаров'];
+export const productNumCases = ['Товар', 'Товара', 'Товаров'];
 
-export const foundNumCases = ['доступен', 'доступно', 'доступно'];
+export const foundNumCases = ['Доступен', 'Доступно', 'Доступно'];
 
 export const NAMED_ORDER_FIELDS: Record<string, string> = {
   name: 'Имя',
