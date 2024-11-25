@@ -13,7 +13,7 @@ import {
 } from 'firebase/firestore';
 import { FIRESTORE_COLLECTIONS } from 'config/consts';
 import { db } from 'config/firebase';
-import { TProduct, TProductApi, TProductsQueryParams } from 'store/types';
+import { TProduct, TProductApi, TProductId, TProductsQueryParams } from 'store/types';
 import { createSearchIndex, getSoundexTerms } from 'utils/fuzzySearch';
 import { TProductsParams, TProductsReturnValue } from './types';
 
@@ -94,4 +94,14 @@ export const getProducts = async (params: TProductsParams): Promise<TProductsRet
     products: querySnapshot.docs.map((doc) => doc.data() as TProductApi),
     lastDoc: querySnapshot.docs[querySnapshot.docs.length - 1],
   };
+};
+
+export const getProductsByIds = async (productsIds: TProductId[]): Promise<TProductApi[]> => {
+  const collectionRef = collection(db, FIRESTORE_COLLECTIONS.products);
+
+  const q = query(collectionRef, where('id', 'in', productsIds));
+
+  const querySnapshot = await getDocs(q);
+
+  return querySnapshot.docs.map((doc) => doc.data() as TProductApi);
 };

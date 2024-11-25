@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { observer } from 'mobx-react-lite';
 import { forwardRef } from 'react';
 
 import styles from './TextField.module.scss';
@@ -55,4 +56,4 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
   );
 });
 
-export default TextField;
+export default observer(TextField);

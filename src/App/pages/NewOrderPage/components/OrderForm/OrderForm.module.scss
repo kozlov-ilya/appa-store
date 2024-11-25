@@ -1,0 +1,21 @@
+.OrderForm {
+  display: flex;
+  flex-direction: column;
+  gap: $space-16;
+
+  padding: $space-16;
+  border: 2px solid var(--color-bg-soft);
+  border-radius: $radius-12;
+
+  container-type: inline-size;
+}
+
+.UserInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $space-16;
+
+  @container (width > 600px) {
+    flex-direction: row;
+  }
+}

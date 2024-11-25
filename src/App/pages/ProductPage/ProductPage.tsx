@@ -43,8 +43,8 @@ const ProductPage = () => {
               </Text>
             </div>
             <div className={styles['Actions']}>
-              <Button text="Корзина" variant="soft" stretched />
-              <Button text="Оплатить" stretched />
+              <Button text="Корзина" variant="soft" stretched size="lg" />
+              <Button text="Оплатить" stretched size="lg" />
             </div>
           </div>
         </div>

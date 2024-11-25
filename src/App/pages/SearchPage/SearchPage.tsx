@@ -1,4 +1,4 @@
-import ProductList from 'components/ProductList';
+import ProductCardList from 'components/ProductCardList';
 import Search from './components/Search';
 import styles from './SearchPage.module.scss';
 
@@ -9,7 +9,7 @@ const SearchPage = () => {
         <Search />
       </div>
       <div className={styles['ProductListContainer']}>
-        <ProductList />
+        <ProductCardList />
       </div>
     </div>
   );

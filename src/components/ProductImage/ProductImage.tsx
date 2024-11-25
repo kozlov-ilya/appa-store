@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import { PRODUCT_IMAGES_BASE_PATH } from 'config/consts';
 import styles from './ProductImage.module.scss';
 
 export type ProductImageProps = React.ComponentPropsWithoutRef<'img'> & {
@@ -12,7 +11,9 @@ const ProductImage: React.FC<ProductImageProps> = (props) => {
 
   const cn = classNames(styles['ProductImage'], { [styles[`ProductImage_radius_${radius}`]]: radius });
 
-  return <img className={cn} src={`${PRODUCT_IMAGES_BASE_PATH}${imgUrl}`} draggable={false} alt="product" {...rest} />;
+  return (
+    <img className={cn} src={imgUrl.replace('imgur', 'i.imgur') + '.jpeg'} draggable={false} alt="product" {...rest} />
+  );
 };
 
 export default ProductImage;

@@ -4,8 +4,10 @@ export type TCategory = (typeof CATEGORY_NAMES)[number];
 
 export type TNamedCategory = { category: TCategory; name: string };
 
+export type TProductId = string;
+
 export type TProductApi = {
-  id: string;
+  id: TProductId;
   name: string;
   category: TCategory;
   brand: string;
@@ -16,7 +18,7 @@ export type TProductApi = {
 };
 
 export type TProduct = {
-  id: string;
+  id: TProductId;
   name: string;
   category: TCategory;
   brand: string;
@@ -36,6 +38,8 @@ export const normalizeProduct = (product: TProductApi): TProduct => {
     imgUrls: product.imgUrls,
   };
 };
+
+export type TCountedProduct = { product: TProduct; count: number };
 
 export type TProductsQueryParams = {
   category: string | null;

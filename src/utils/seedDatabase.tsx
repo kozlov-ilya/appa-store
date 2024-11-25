@@ -13,7 +13,7 @@ const seedCategory = async (category: TCategory, times: number) => {
       await addProduct({
         ...product,
         category: product.category as TCategory,
-        name: `${product.name} (${i})`,
+        name: product.name,
         id: productId,
       });
     });
@@ -21,7 +21,9 @@ const seedCategory = async (category: TCategory, times: number) => {
 };
 
 export const seedProducts = async () => {
-  await seedCategory('jackets', 6);
-  await seedCategory('tshirts', 6);
-  await seedCategory('accesories', 24);
+  await seedCategory('jackets', 5);
+  await seedCategory('tshirts', 5);
+  await seedCategory('accesories', 5);
+  await seedCategory('bottoms', 5);
+  await seedCategory('footwear', 5);
 };
