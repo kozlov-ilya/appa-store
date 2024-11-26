@@ -1,20 +1,27 @@
-import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import Avatar from 'components/Avatar';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
-import { ROUTES } from 'config/consts';
-import { useMatchMedia } from 'hooks';
-import { scrollToTop } from 'utils/scrollToTop';
+import Loader from 'components/Loader';
+import { useAuth, useMatchMedia } from 'hooks';
+import { ROUTES } from 'routes';
+import Logo from './components/Logo';
+import ThemeSwitch from './components/ThemeSwitch';
 import styles from './Header.module.scss';
 
 const Header = () => {
   const { isMobile } = useMatchMedia();
 
+  const {
+    store: { authUser },
+    isAuthLoading,
+  } = useAuth();
+
   return (
     <div className={styles['Header']}>
-      <Link to={ROUTES.home} onClick={() => scrollToTop()}>
-        Logo
-      </Link>
+      <Logo />
       <div className={styles['ActionsContainer']}>
+        <ThemeSwitch />
         <Button
           component="a"
           to={ROUTES.search}
@@ -29,11 +36,20 @@ const Header = () => {
           variant="ghost"
           leftContent={<Icon icon="ShoppingBag" size={18} />}
         />
-        {!isMobile && <Button text={'Войти'} variant="ghost" leftContent={<Icon icon="User" size={18} />} />}
-        {isMobile && <Button variant="ghost" leftContent={<Icon icon="Burger" size={18} />} />}
+        {isAuthLoading && <Loader size="md" />}
+        {!isAuthLoading && !!authUser && <Avatar imgUrl={authUser.photoURL || undefined} link={ROUTES.profile} />}
+        {!isAuthLoading && !authUser && (
+          <Button
+            text={'Войти'}
+            component="a"
+            to={ROUTES.login}
+            variant="ghost"
+            leftContent={<Icon icon="User" size={18} />}
+          />
+        )}
       </div>
     </div>
   );
 };
 
-export default Header;
+export default observer(Header);

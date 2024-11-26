@@ -1,0 +1,9 @@
+.OrderItem {
+  padding-block: $space-12;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

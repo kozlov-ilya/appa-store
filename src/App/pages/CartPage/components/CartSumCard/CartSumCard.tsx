@@ -2,8 +2,8 @@ import { observer } from 'mobx-react-lite';
 import { useCallback } from 'react';
 import Button from 'components/Button';
 import ProductsSumCard from 'components/ProductsSumCard';
-import { ROUTES } from 'config/consts';
 import { useCart, useOrder } from 'hooks';
+import { ROUTES } from 'routes';
 
 const CartSumCard = () => {
   const {
@@ -11,19 +11,19 @@ const CartSumCard = () => {
   } = useCart();
 
   const {
-    store: { loadOrderProductsFromCart },
+    store: { loadNewOrderProductsFromCart },
   } = useOrder();
 
   const handleOrderButtonClick = useCallback(() => {
-    loadOrderProductsFromCart();
-  }, [loadOrderProductsFromCart]);
+    loadNewOrderProductsFromCart();
+  }, [loadNewOrderProductsFromCart]);
 
   return (
     <ProductsSumCard
       countedProducts={cart}
       ActionButton={
         <Button
-          text="Оформить заказ"
+          text="Перейти к оформлению"
           onClick={handleOrderButtonClick}
           component="a"
           to={ROUTES.newOrder}

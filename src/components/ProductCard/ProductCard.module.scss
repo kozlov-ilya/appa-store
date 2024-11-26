@@ -3,9 +3,11 @@
   position: relative;
   overflow: hidden;
 
-  &:hover {
-    cursor: pointer;
-    --name-decoration: underline;
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      --name-decoration: underline;
+    }
   }
 }
 
@@ -30,6 +32,8 @@
 .ProductLink {
   position: absolute;
   inset: 0;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .Body {

@@ -22,7 +22,8 @@
       "styles/*": ["src/styles/*"],
       "utils/*": ["src/utils/*"],
       "hooks": ["src/hooks"],
-      "providers": ["src/providers"]
+      "providers": ["src/providers"],
+      "routes": ["src/routes"]
     }
   },
   "include": ["src/**/*", "./declaration.d.ts"],

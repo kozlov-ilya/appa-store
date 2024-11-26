@@ -1,0 +1,21 @@
+.Link {
+  font: inherit;
+
+  text-decoration: none;
+
+  -webkit-tap-highlight-color: transparent;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &_color_primary {
+    color: var(--color-text-primary);
+  }
+
+  &_color_accent {
+    color: var(--color-link-accent);
+  }
+}

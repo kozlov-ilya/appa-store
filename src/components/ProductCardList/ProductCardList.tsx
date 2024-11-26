@@ -1,7 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import Skeleton from 'react-loading-skeleton';
+import Loader from 'components/Loader';
 import ProductCard from 'components/ProductCard';
+import { foundNumCases, productNumCases } from 'config/consts';
 import { useCart, useProducts } from 'hooks';
 import { declOfNum } from 'utils/declOfNum';
 import styles from './ProductCardList.module.scss';
@@ -16,9 +17,9 @@ const ProductCardList = () => {
     <div>
       <div className={styles['ProductsCount']}>
         {!(productsCount === null) ? (
-          `( ${productsCount} ${declOfNum(productsCount, ['Товар', 'Товара', 'Товаров'])} Доступно )`
+          `( ${productsCount} ${declOfNum(productsCount, productNumCases)} ${declOfNum(productsCount, foundNumCases)} )`
         ) : (
-          <Skeleton width={150} />
+          <Loader size="sm" />
         )}
       </div>
       <InfiniteScroll

@@ -16,14 +16,47 @@ export const NAMED_CATEGORIES: TNamedCategory[] = [
 
 export const DEFAULT_CATEGORY: TNamedCategory = { name: 'Куртки', category: 'jackets' } as const;
 
-export const ROUTES = {
-  home: '/',
-  product: '/product/',
-  search: '/search',
-  cart: '/cart',
-  newOrder: '/order',
-} as const;
-
 export const FIRESTORE_COLLECTIONS = {
   products: 'products',
+  users: 'users',
+  orders: 'orders',
 } as const;
+
+export const LOCAL_STORAGE_ITEMS = {
+  cart: 'cart',
+  order: 'order',
+};
+
+export const FORMFIELD_LABELS = {
+  name: 'Имя',
+  surname: 'Фамилия',
+  email: 'Email',
+  password: 'Пароль',
+  confirmPassword: 'Подтверждение пароля',
+  phone: 'Номер телефона',
+};
+
+export const INPUT_PLACEHOLDERS = {
+  name: 'Введите своё имя',
+  surname: 'Введите свою фамилию',
+  email: 'Введите свой Email',
+  password: 'Введите пароль',
+  confirmPassword: 'Введите пароль еще раз',
+  phone: 'Введите свой номер телефона',
+};
+
+export const productNumCases = ['Товар', 'Товара', 'Товаров'];
+
+export const foundNumCases = ['Доступен', 'Доступно', 'Доступно'];
+
+export const NAMED_ORDER_FIELDS: Record<string, string> = {
+  name: 'Имя',
+  email: 'Email',
+  phone: 'Телефон',
+  surname: 'Фамилия',
+  date: 'Дата заказа',
+} as const;
+
+export const cartLimit = 30;
+
+export const cartLimitErrorMessage = 'Нельзя добавить в корзину больше 30 элементов';

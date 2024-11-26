@@ -3,7 +3,7 @@
   grid-template-areas:
     "gallery"
     "content";
-  column-gap: $space-32;
+  gap: $space-32;
 
   @media screen and (width > #{$bp-sm-768}) {
     grid-template-areas: "gallery content";
@@ -31,4 +31,12 @@
 .Actions {
   display: flex;
   gap: $space-16;
+}
+
+.LoaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 300px;
 }

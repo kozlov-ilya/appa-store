@@ -16,7 +16,7 @@ const FormField = forwardRef<HTMLLabelElement, FormFieldProps>((props, ref) => {
       {label && <Text className={styles['Label']} weight="medium">{`${label}${isRequired ? ' *' : ''}`}</Text>}
       <span className={styles['Control']}>
         {children}
-        {errorMessage && (
+        {!!errorMessage && (
           <Text className={styles['ErrorMessage']} view="p-14">
             {errorMessage}
           </Text>

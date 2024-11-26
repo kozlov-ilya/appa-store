@@ -17,12 +17,16 @@ const Search = () => {
     [searchValue, setQueryParam],
   );
 
+  const handleSearchValueChange: React.ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
+    setSearchValue(event.currentTarget.value);
+  }, []);
+
   return (
     <form className={styles['SearchForm']} onSubmit={handleSubmit}>
       <TextField
         className={styles['Search']}
         value={searchValue}
-        onChange={(value) => setSearchValue(value)}
+        onChange={handleSearchValueChange}
         fieldSize="lg"
         leftContent={<Icon icon="Search" />}
       />

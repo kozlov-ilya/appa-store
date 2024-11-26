@@ -5,6 +5,7 @@ import Providers from 'providers';
 import App from './App';
 import 'react-loading-skeleton/dist/skeleton.css';
 import './styles/index.scss';
+import 'react-toastify/dist/ReactToastify.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -32,6 +32,103 @@
     "imgUrls": ["https://imgur.com/8UNUUBl", "https://imgur.com/8zp6lXm"]
   },
   {
+    "name": "Пуховик SEGMENT 2.0 DAZE",
+    "category": "jackets",
+    "brand": "Issaya",
+    "description": "- Пуховик в исполнении Issaya - Дутый дизайн - Температура комфорта до -35 - 100% нейлон - Утеплитель: корейский био пух плотностью 850 gr - Верх выполнен из матовой ripstop мембраны - Сепарированные двухслойные секции для удержания пуха - Снизу резинка для защиты от ветра и для регулировки фита - Съёмный функциональный внутренний ремень для ношения пуховика на плечах - Эргономичная форма капюшона - Ветрозащитная планка",
+    "price": 16900,
+    "imgUrls": ["https://imgur.com/NxKehVh", "https://imgur.com/nMVMF6C"]
+  },
+  {
+    "name": "Пуховик SEGMENT 2.0 VOID",
+    "category": "jackets",
+    "brand": "Issaya",
+    "description": "- Пуховик в исполнении Issaya - Дутый дизайн - Температура комфорта до -35 - 100% нейлон - Утеплитель: корейский био пух плотностью 850 gr - Верх выполнен из матовой ripstop мембраны - Сепарированные двухслойные секции для удержания пуха - Снизу резинка для защиты от ветра и для регулировки фита - Съёмный функциональный внутренний ремень для ношения пуховика на плечах - Эргономичная форма капюшона - Ветрозащитная планка",
+    "price": 16900,
+    "imgUrls": ["https://imgur.com/Xf6phng", "https://imgur.com/uvtTh56"]
+  },
+  {
+    "name": "Куртка WOOL CHECK",
+    "category": "jackets",
+    "brand": "New Amsterdam Surf Association",
+    "description": "- Амстердамский сёрферский бренд - 50% шерсть, 50% полиэстер. Подкладка: 100% полиэстер - Прямой крой - Отложной воротник - Застёжка на молнии с сигнатурным пулером в виде устрицы - Прорезные карманы в боковых швах - Накладная тональная литера N на груди и A на спине - Ручная отделка швов - Heritage эстетика - 100% French chic - Оригинальный дизайнерский предмет повседневного гардероба - Ультимативное решение в холодные месяцы",
+    "price": 40900,
+    "imgUrls": ["https://imgur.com/ufDo0yS", "https://imgur.com/axTE16n"]
+  },
+  {
+    "name": "Куртка SHEERLING",
+    "category": "jackets",
+    "brand": "New Amsterdam Surf Association",
+    "description": "- Амстердамский сёрферский бренд - 100% овечья шерсть - Oversize крой - Воротник стойка - Застёжка на двухсторонней молнии - Прорезные передние карманы - Регулируемый подол на пуговицах сзади - Вытачки в области рукавов и спины для повышенной мобильности - Тональный логотип на спине выжжен лазером - Фирменный брендинг - Heritage эстетика - Оригинальный дизайнерский предмет повседневного гардероба - Ультимативное решение в холодные месяцы",
+    "price": 168900,
+    "imgUrls": ["https://imgur.com/AWvwSBu", "https://imgur.com/J7dD6Cx"]
+  },
+  {
+    "name": "Флисовая куртка MT GORILLA",
+    "category": "jackets",
+    "brand": "Manastash",
+    "description": "- Американо-японский устойчивый бренд - Бестселлер бренда - Температура комфорта +10/-5°C - Панельчатый дизайн - 100% полиэстер. Ветрозащитный флис boa – исключительный по своей мягкости и теплоизоляции. Нижний воротник и накладные карманы выполнены из конопляного хлопкового твила – прочная и приятная на ощупь ткань имеет уникальный внешний вид и текстуру - Свободный крой - Опущенные плечи - Воротник стойка - Застёжка на двухсторонней молнии YKK - Прорезной нагрудный карман на молнии - Прорезные передние карманы на молнии - Эластичные манжеты и подол - Тканый патч на нагрудном кармане - Тесьма с изображением гор - Фирменный брендинг - Аутдор эстетика - 100% Cozy - Ультимативное решение в холодные месяцы - Идеально подходит для активного отдыха - Рекомендуется носить как внешний или средний слой - Рекомендуется машинная стирка при 30 градусах",
+    "price": 38900,
+    "imgUrls": ["https://imgur.com/xtlTxk9", "https://imgur.com/8veV2bU"]
+  },
+  {
+    "name": "Бомбер EXTRA MILE MA-1",
+    "category": "jackets",
+    "brand": "Manastash",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac - ante ipsum primis in faucibus.",
+    "price": 111300,
+    "imgUrls": ["https://imgur.com/1nz88SY", "https://imgur.com/r34RPOg"]
+  },
+  {
+    "name": "Куртка RAW JUNGLE",
+    "category": "jackets",
+    "brand": "Daze",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac - ante ipsum primis in faucibus.",
+    "price": 35000,
+    "imgUrls": ["https://imgur.com/1NAXy6A", "https://imgur.com/ZrB6qkZ"]
+  },
+  {
+    "name": "Куртка NADA SHELL",
+    "category": "jackets",
+    "brand": "C.P. Company",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac - ante ipsum primis in faucibus.",
+    "price": 51070,
+    "imgUrls": ["https://imgur.com/oKy1T7K", "https://imgur.com/b6sDU9J"]
+  },
+  {
+    "name": "Джинсовка BIG POCKET",
+    "category": "jackets",
+    "brand": "Standard Types",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac - ante ipsum primis in faucibus.",
+    "price": 39900,
+    "imgUrls": ["https://imgur.com/cjMMAFS", "https://imgur.com/sn8WWvD"]
+  },
+  {
+    "name": "Куртка TECHNICAL VENTILATION",
+    "category": "jackets",
+    "brand": "Is-ness",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac - ante ipsum primis in faucibus.",
+    "price": 57900,
+    "imgUrls": ["https://imgur.com/8PydreS", "https://imgur.com/8lWge6K"]
+  },
+  {
+    "name": "Куртка FORCE",
+    "category": "jackets",
+    "brand": "Parlez",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac - ante ipsum primis in faucibus.",
+    "price": 26900,
+    "imgUrls": ["https://imgur.com/mhtuS6K", "https://imgur.com/kMkSHUL"]
+  },
+  {
+    "name": "Плащ 3 LAYER SINGLE BALMACAAN",
+    "category": "jackets",
+    "brand": "Noice",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac - ante ipsum primis in faucibus.",
+    "price": 33950,
+    "imgUrls": ["https://imgur.com/byprcTq", "https://imgur.com/jKZ9voy"]
+  },
+
+  {
     "name": "Футболка PANASIAN GETA SHOES",
     "category": "tshirts",
     "brand": "Rice",
@@ -63,6 +160,71 @@
     "price": 9200,
     "imgUrls": ["https://imgur.com/iBGyly4", "https://imgur.com/pPJVsDG"]
   },
+  {
+    "name": "Футболка STONE SHAPES",
+    "category": "tshirts",
+    "brand": "Called a Garment",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 3800,
+    "imgUrls": ["https://imgur.com/vBdNcgu", "https://imgur.com/JCOwBYK"]
+  },
+  {
+    "name": "Футболка HORSES PEACH EFFECT",
+    "category": "tshirts",
+    "brand": "Called a Garment",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 3800,
+    "imgUrls": ["https://imgur.com/3uN8POn", "https://imgur.com/53yzUna"]
+  },
+  {
+    "name": "Футболка Creepy Crawly",
+    "category": "tshirts",
+    "brand": "Crawling Death",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 2800,
+    "imgUrls": ["https://imgur.com/nG5HNNx", "https://imgur.com/o7CcxLA"]
+  },
+  {
+    "name": "Майка BASIC UNDERSHIRT",
+    "category": "tshirts",
+    "brand": "Rice",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 3000,
+    "imgUrls": ["https://imgur.com/Ms8i67k", "https://imgur.com/1QarJPw"]
+  },
+  {
+    "name": "Футболка CORE LOGO",
+    "category": "tshirts",
+    "brand": "RAVE Skateboards",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 3000,
+    "imgUrls": ["https://imgur.com/NcC1MwA", "https://imgur.com/F6eoUbd"]
+  },
+  {
+    "name": "Футболка Chrome Spider",
+    "category": "tshirts",
+    "brand": "Crawling Death",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 3450,
+    "imgUrls": ["https://imgur.com/zA3TrNx", "https://imgur.com/oet6E2o"]
+  },
+  {
+    "name": "Футболка KAYBUG",
+    "category": "tshirts",
+    "brand": "Called a Garment",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 3500,
+    "imgUrls": ["https://imgur.com/bIgaG3o", "https://imgur.com/Kj2RNU9"]
+  },
+  {
+    "name": "Футболка POCKET",
+    "category": "tshirts",
+    "brand": "Goldwin",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 4900,
+    "imgUrls": ["https://imgur.com/rnCC8on", "https://imgur.com/hDOTcLi"]
+  },
+
   {
     "name": "Кепка WOOL",
     "category": "accesories",
@@ -96,6 +258,31 @@
     "imgUrls": ["https://imgur.com/2MDbw2z", "https://imgur.com/98ZrNpo"]
   },
   {
+    "name": "Рюкзак ARVID",
+    "category": "accesories",
+    "brand": "Sandqvist",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 16030,
+    "imgUrls": ["https://imgur.com/6R7BHKR", "https://imgur.com/NWq63pG"]
+  },
+  {
+    "name": "Сумка PANASIAN BAGGU",
+    "category": "accesories",
+    "brand": "Rice",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 3030,
+    "imgUrls": ["https://imgur.com/2RKD8qU", "https://imgur.com/2f9TPXp"]
+  },
+  {
+    "name": "Брошь CRANIUM",
+    "category": "accesories",
+    "brand": "Styx Jewel",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 3000,
+    "imgUrls": ["https://imgur.com/7muNf6M", "https://imgur.com/Jrql0my"]
+  },
+
+  {
     "name": "Брюки WIDE LEG",
     "category": "bottoms",
     "brand": "New Amsterdam Surf Association",
@@ -128,6 +315,31 @@
     "imgUrls": ["https://imgur.com/iBsbMtc", "https://imgur.com/tzYSy2a"]
   },
   {
+    "name": "Брюки A PANT",
+    "category": "bottoms",
+    "brand": "Stan Ray",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 12900,
+    "imgUrls": ["https://imgur.com/CpBS030", "https://imgur.com/SVat4qs"]
+  },
+  {
+    "name": "Брюки OG NYLON WIDE",
+    "category": "bottoms",
+    "brand": "Lost Management Cities",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 14450,
+    "imgUrls": ["https://imgur.com/6orcKnZ", "https://imgur.com/NhKJ4YE"]
+  },
+  {
+    "name": "Брюки SORONA PLANT",
+    "category": "bottoms",
+    "brand": "Standard Types",
+    "description": "- Lorem ipsum dolor sit amet, - consectetur adipiscing elit. Duis - id nisl a massa consectetur bibendum. - Fusce pharetra eget metus in tincidunt. - Aliquam euismod, orci vel egestas convallis, - risus augue imperdiet lorem, vitae vulputate mauris - mauris ac nisi. Etiam quis imperdiet tellus. - Phasellus hendrerit orci nec euismod vehicula. Integer nec augue nec mauris - vulputate rutrum quis eget nisi. Interdum et malesuada fames ac",
+    "price": 31900,
+    "imgUrls": ["https://imgur.com/FnBF84F", "https://imgur.com/YZAFnm0"]
+  },
+
+  {
     "name": "WAVE RIDER 10 PREMIUM",
     "category": "footwear",
     "brand": "Mizuno",
@@ -142,5 +354,29 @@
     "description": "- CamperLab – суббренд испанской обувной марки, отличающийся прогрессивным и экспериментальным дизайном - Лоферы - Верх - 72% телячья кожа, 28% текстиль (45% переработанный полиэстер, 35% переработанный хлопок, 20% вискоза); низ - резина - Стелька OrthoLite® для амортизации - Характерный квадратный мысок - Подошва из цельнозерновой кожи с декоративными прорезями - Классическая эстетика - 100% экологически ответственный выбор - Добавят элегантности базовому гардеробу - Рекомендуется почитателям современного тейлоринга - Склонны к оригинальному процессу состаривания, приобретая аутентичный вид - Рекомендуется размер больше, если вы носите половинчатый размер",
     "price": 14950,
     "imgUrls": ["https://imgur.com/t5Elxoj", "https://imgur.com/Br9sesm"]
+  },
+  {
+    "name": "Ботинки DANNER MT.RIDGE X DANNER",
+    "category": "footwear",
+    "brand": "Meanswhile",
+    "description": "- Японская techwear марка, одна из самых желанных технических линеек в мире - Коллаборация Meanswhile x Danner - В основе дизайна знаменитые походные ботинки Danner Mountain Ridge - Гибридный дизайн - Верх: коровья кожа, полиэстер; подкладка: коровья кожа; подошва: резина - Вес: 1443г - Надёжная подошва Vibram® из очень прочной резины обеспечивает максимальное сцепление и отличную амортизацию – мировой лидер в производстве подошв - Норвежская конструкция одновременно прочная, гибкая и водонепроницаемая (не имеет ничего общего с Норвегией). Отличается особым креплением верха к подошве с помощью ранта - Норвежский шов специально использовался для горных и рабочих ботинок, являясь дополнительной преградой для влаги",
+    "price": 77900,
+    "imgUrls": ["https://imgur.com/UVt7bkC", "https://imgur.com/2Chb8rS"]
+  },
+  {
+    "name": "Кроссовки VIA OLYMPUS 2",
+    "category": "footwear",
+    "brand": "Altra Running",
+    "description": "- Altra Running – американская производственная компания беговых кроссовок - Via Olympus 2 – рабочая лошадка для комфортного бега по шоссе и повседневных прогулок - Вес 323г - Верх - дышащая быстросохнущая сетка mesh; подкладка - текстиль; низ - резина - Конструкция с самой просторной площадкой для пальцев с достаточным пространством для свободного перемещения пальцев ног и пространством в средней части стопы - Промежуточная подошва Altra EGO™ обеспечивает дополнительный возврат энергии и ощущение мягкости и комфорта - Форма подошвы создаёт ощущение движения вперед с каждым шагом и обеспечивает эффективное отталкивание без ущерба для естественного шага - Плюшевая стелька Ortolite X55 улучшает ощущения при ходьбе - Светоотражающий брендинг - Оптимальный вес кроссовка, подходящий для длинных дистанций - Рекомендуются для шоссейного бега, городского использования и занятий спортом",
+    "price": 13825,
+    "imgUrls": ["https://imgur.com/YhRKWLC", "https://imgur.com/pOyOPEX"]
+  },
+  {
+    "name": "Кроссовки Tormenta",
+    "category": "footwear",
+    "brand": "CamperLab",
+    "description": "- CamperLab – суббренд испанской обувной марки, отличающийся прогрессивным и экспериментальным дизайном - Инновационные кроссовки Tormenta названы испанским словом «шторм» - Верх - 54% текстиль (70% бамбуковое волокно, 30% переработанный полиэстер), 27% текстиль (75% переработанный полиэстер, 25% сорона), 19% переработанный полиэстер; подкладка - текстиль; низ - 100% натуральная резина - Верх из: дышащей сетки с превосходной эластичностью Sorona® – экологичная ткань растительного происхождения, и вставок из переработанных материалов; HyphaLite™– нового инновационного материала состоящего на 90% из органических материалов, в том числе грибов; MIRUM® – совершенно нового материала растительного происхождения, не содержащего пластика; лиоцелла Tencel – материал натурального происхождения, который изготавливают из древесины австралийского эвкалипта и подвергают нанообработке - Промежуточная подошва EVA - Стелька OrthoLite® для амортизации - Фирменный брендинг - Футуристичная эстетика - 100% recycled",
+    "price": 23450,
+    "imgUrls": ["https://imgur.com/RsiIaW8", "https://imgur.com/stotR4b"]
   }
 ]

@@ -34,7 +34,7 @@
   }
 
   &_size_md {
-    --textfield-height: 40px;
+    --textfield-height: 42px;
     --textfield-padding: #{$space-8} #{$space-16};
   }
 
@@ -82,6 +82,13 @@
   &:disabled::placeholder {
     color: var(--color-text-disabled);
     user-select: none;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus {
+    transition:
+      background-color 0s 600000s,
+      color 0s 600000s !important;
   }
 }
 

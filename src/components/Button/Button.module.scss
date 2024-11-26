@@ -1,7 +1,7 @@
 .Button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: var(--button-align);
   gap: $space-8;
   overflow: hidden;
 
@@ -27,8 +27,10 @@
     --button-bg: var(--color-bg-contrast);
     --button-color: var(--color-text-contrast);
 
-    &:hover {
-      filter: contrast(0.88) saturate(1.1) brightness(1.1);
+    @media (hover: hover) {
+      &:hover {
+        filter: contrast(0.88) saturate(1.1) brightness(1.1);
+      }
     }
 
     &:active {
@@ -39,8 +41,10 @@
   &_variant_ghost {
     --button-bg: transparent;
 
-    &:hover {
-      --button-bg: var(--color-bg-hover);
+    @media (hover: hover) {
+      &:hover {
+        --button-bg: var(--color-bg-hover);
+      }
     }
 
     &:active {
@@ -52,8 +56,10 @@
     --button-bg: var(--color-bg-soft);
     --button-color: var(--color-text-secondary);
 
-    &:hover {
-      --button-bg: var(--color-bg-soft-hover);
+    @media (hover: hover) {
+      &:hover {
+        --button-bg: var(--color-bg-soft-hover);
+      }
     }
 
     &:active {
@@ -87,6 +93,19 @@
     --button-height: 42px;
   }
 
+  /* ---------------------------------- align --------------------------------- */
+  &_align_center {
+    --button-align: center;
+  }
+
+  &_align_start {
+    --button-align: start;
+  }
+
+  &_align_end {
+    --button-align: end;
+  }
+
   /* -------------------------------- stretched ------------------------------- */
   &_stretched {
     --button-width: 100%;
@@ -104,6 +123,11 @@
     --button-bg: var(--color-bg-disabled);
     --button-color: var(--color-text-disabled);
     --button-cursor: default;
+    pointer-events: none;
+  }
+
+  /* --------------------------------- loading -------------------------------- */
+  &_loading {
     pointer-events: none;
   }
 }

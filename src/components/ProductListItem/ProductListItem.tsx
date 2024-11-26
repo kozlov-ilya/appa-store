@@ -1,16 +1,17 @@
 import { useCallback } from 'react';
-import Skeleton from 'react-loading-skeleton';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
+import Link from 'components/Link';
 import ProductImage from 'components/ProductImage';
 import Text from 'components/Text';
 import { useCart } from 'hooks';
+import { ROUTES } from 'routes';
 import { TProduct } from 'store/types';
 import { formatToCurrency } from 'utils/formatToCurrency';
 import styles from './ProductListItem.module.scss';
 
 export type ProductListItemProps = {
-  product?: TProduct;
+  product: TProduct;
   withActions?: boolean;
 };
 
@@ -29,14 +30,14 @@ const ProductListItem: React.FC<ProductListItemProps> = (props) => {
     removeProductFromCart(product.id);
   }, [product, removeProductFromCart]);
 
-  return product ? (
+  return (
     <div className={styles['ProductListItem']}>
       <div className={styles['ImageContainer']}>
         <ProductImage imgUrl={product.imgUrls[0]} radius="md" />
       </div>
       <div className={styles['Info']}>
         <Text className={styles['Name']} maxLines={2}>
-          {product.name}
+          <Link to={`${ROUTES.product}/${product.id}`}>{product.name}</Link>
         </Text>
         <Text className={styles['Price']} view="p-18" weight="medium">
           {`₽ ${formatToCurrency(product.price)}`}
@@ -53,8 +54,6 @@ const ProductListItem: React.FC<ProductListItemProps> = (props) => {
         </div>
       )}
     </div>
-  ) : (
-    <Skeleton containerClassName={styles['CartItemSkeleton']} />
   );
 };
 

@@ -21,9 +21,12 @@ const seedCategory = async (category: TCategory, times: number) => {
 };
 
 export const seedProducts = async () => {
-  await seedCategory('jackets', 5);
-  await seedCategory('tshirts', 5);
-  await seedCategory('accesories', 5);
-  await seedCategory('bottoms', 5);
-  await seedCategory('footwear', 5);
+  await seedCategory('jackets', 1);
+  await seedCategory('tshirts', 1);
+  await seedCategory('accesories', 1);
+  await seedCategory('bottoms', 1);
+  await seedCategory('footwear', 1);
+
+  // eslint-disable-next-line no-console
+  console.log('seeded');
 };

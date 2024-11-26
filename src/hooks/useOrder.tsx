@@ -1,22 +1,15 @@
-import { useCallback } from 'react';
 import rootStore from 'store/RootStore';
+import { Meta } from 'store/types';
 
 export const useOrder = () => {
-  const { setOrderFieldValue } = rootStore.orderStore;
+  const { newOrderMeta, userOrdersMeta } = rootStore.orderStore;
 
-  const handleNameChange = useCallback(
-    (value: string) => {
-      setOrderFieldValue('name', value);
-    },
-    [setOrderFieldValue],
-  );
+  const isNewOrderProductsLoading = newOrderMeta === Meta.loading;
+  const isUserOrdersLoading = userOrdersMeta === Meta.loading;
 
-  const handleEmailChange = useCallback(
-    (value: string) => {
-      setOrderFieldValue('email', value);
-    },
-    [setOrderFieldValue],
-  );
-
-  return { store: rootStore.orderStore, handleNameChange, handleEmailChange };
+  return {
+    store: rootStore.orderStore,
+    isNewOrderProductsLoading,
+    isUserOrdersLoading,
+  };
 };
