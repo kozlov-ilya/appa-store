@@ -30,9 +30,9 @@ const ProductsSumCard: React.FC<ProductsSumCardProps> = (props) => {
           </Text>
           {isLoading && <Loader size="lg" className={styles['Loader']} />}
           {!!countedProducts?.length &&
-            countedProducts.map(({ product }) => (
-              <Fragment key={product.id}>
-                <ProductListItem product={product} />
+            countedProducts.map((countedProduct) => (
+              <Fragment key={countedProduct.product.id}>
+                <ProductListItem countedProduct={countedProduct} />
                 <Divider />
               </Fragment>
             ))}

@@ -64,7 +64,7 @@ export const getProducts = async (params: TProductsParams): Promise<TProductsRet
   const {
     queryParams: { term, category },
     startAfterDoc,
-    limitPerPage = 12,
+    limitPerPage = 8,
     orderByField = 'name',
   } = params;
 

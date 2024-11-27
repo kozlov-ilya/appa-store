@@ -8,6 +8,8 @@ import {
   FiLogOut as LogOut,
   FiMoon as Moon,
   FiSun as Sun,
+  FiPlus as Plus,
+  FiMinus as Minus,
 } from 'react-icons/fi';
 
 import { IoIosArrowForward as Forward } from 'react-icons/io';
@@ -18,6 +20,8 @@ import Google from './assets/google-logo.svg';
 import Loader from './assets/loader.svg';
 
 export const icons = {
+  Plus,
+  Minus,
   Sun,
   Moon,
   Search,

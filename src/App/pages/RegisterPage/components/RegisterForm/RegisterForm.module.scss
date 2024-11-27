@@ -10,11 +10,24 @@
   background: var(--color-bg-primary);
 }
 
+.Header {
+  display: flex;
+  flex-direction: column;
+  gap: $space-12;
+  text-align: center;
+}
+
 .Fields {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: $space-12;
+
+  margin-top: $space-12;
+
+  @media screen and (width > #{$bp-sm-768}) {
+    margin-top: $space-24;
+  }
 }
 
 .FieldsSection {

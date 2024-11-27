@@ -67,6 +67,12 @@ const LoginForm = () => {
 
   return (
     <form className={styles['LoginForm']} onSubmit={handleSubmit(handleLoginFormSubmit)}>
+      <div className={styles['Header']}>
+        <Text view="title" weight="medium">
+          С Возвращением!
+        </Text>
+        <Text color="secondary">Войдите в аккаунт, чтобы получить доступ к оформлению заказов</Text>
+      </div>
       <div className={styles['Fields']}>
         <FormField label={FORMFIELD_LABELS.email} errorMessage={errors.email?.message}>
           <TextField
