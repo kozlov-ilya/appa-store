@@ -10,11 +10,20 @@
   background: var(--color-bg-primary);
 }
 
+.Header {
+  display: flex;
+  flex-direction: column;
+  gap: $space-12;
+  text-align: center;
+}
+
 .Fields {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: $space-16;
+
+  margin-top: $space-24;
 }
 
 .Actions {

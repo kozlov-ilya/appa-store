@@ -12,12 +12,12 @@ export default class CartStore {
 
   constructor() {
     makeObservable<CartStore, PrivateFields>(this, {
-      _cart: observable.ref,
+      _cart: observable,
       _meta: observable,
       cart: computed,
       meta: computed,
       sumCost: computed,
-      cartProducts: computed,
+      setProductCount: action.bound,
       loadCartFromLocal: action.bound,
       addProductToCart: action.bound,
       removeProductFromCart: action.bound,
@@ -37,8 +37,14 @@ export default class CartStore {
     return this._cart.reduce((sum, item) => sum + item.product.price * item.count, 0);
   }
 
-  get cartProducts(): TProduct[] {
-    return this._cart.map((item) => item.product);
+  setProductCount(productId: TProductId, count: number) {
+    const countedProductInd = this._cart.findIndex(({ product }) => product.id === productId);
+
+    if (countedProductInd === -1) {
+      return;
+    }
+
+    this._cart[countedProductInd] = { ...this._cart[countedProductInd], count };
   }
 
   async loadCartFromLocal(localCart: TLocalStorageCart) {

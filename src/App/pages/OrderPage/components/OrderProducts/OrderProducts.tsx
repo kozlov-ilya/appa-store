@@ -15,10 +15,10 @@ const OrderProducts: React.FC<OrderProductProps> = (props) => {
   return (
     <div className={styles['OrderProducts']}>
       <Text view="p-24">Товары в заказе</Text>
-      {orderProducts.map(({ product }) => (
-        <Fragment key={product.id}>
+      {orderProducts.map((countedProduct) => (
+        <Fragment key={countedProduct.product.id}>
           <Divider />
-          <ProductListItem product={product} />
+          <ProductListItem countedProduct={countedProduct} />
         </Fragment>
       ))}
     </div>

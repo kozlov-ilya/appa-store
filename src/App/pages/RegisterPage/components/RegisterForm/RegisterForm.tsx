@@ -69,6 +69,12 @@ const RegisterForm = () => {
 
   return (
     <form className={styles['RegisterForm']} onSubmit={handleSubmit(handleRegisterFormSubmit)} autoComplete="off">
+      <div className={styles['Header']}>
+        <Text view="title" weight="medium">
+          Добро Пожаловать!
+        </Text>
+        <Text color="secondary">Зарегистрируйтесь, чтобы получить доступ к оформлению заказов</Text>
+      </div>
       <div className={styles['Fields']}>
         <div className={styles['FieldsSection']}>
           <FormField label={FORMFIELD_LABELS.name} errorMessage={errors.name?.message}>

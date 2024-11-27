@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react-lite';
 import { useCallback } from 'react';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
@@ -6,17 +7,21 @@ import ProductImage from 'components/ProductImage';
 import Text from 'components/Text';
 import { useCart } from 'hooks';
 import { ROUTES } from 'routes';
-import { TProduct } from 'store/types';
+import { TCountedProduct } from 'store/types';
 import { formatToCurrency } from 'utils/formatToCurrency';
+import Counter from './components/Counter';
 import styles from './ProductListItem.module.scss';
 
 export type ProductListItemProps = {
-  product: TProduct;
+  countedProduct: TCountedProduct;
   withActions?: boolean;
 };
 
 const ProductListItem: React.FC<ProductListItemProps> = (props) => {
-  const { product, withActions } = props;
+  const {
+    countedProduct: { product, count },
+    withActions,
+  } = props;
 
   const {
     store: { removeProductFromCart },
@@ -40,11 +45,12 @@ const ProductListItem: React.FC<ProductListItemProps> = (props) => {
           <Link to={`${ROUTES.product}/${product.id}`}>{product.name}</Link>
         </Text>
         <Text className={styles['Price']} view="p-18" weight="medium">
-          {`₽ ${formatToCurrency(product.price)}`}
+          {`₽ ${formatToCurrency(product.price * count)} (x${count})`}
         </Text>
       </div>
       {withActions && (
         <div className={styles['Actions']}>
+          <Counter productId={product.id} count={count} />
           <Button
             text="Удалить"
             onClick={handleRemoveButtonClick}
@@ -57,4 +63,4 @@ const ProductListItem: React.FC<ProductListItemProps> = (props) => {
   );
 };
 
-export default ProductListItem;
+export default observer(ProductListItem);

@@ -10,7 +10,7 @@ export default class ProductsStore {
   private _rootStore: RootStore;
 
   private _products: TProduct[] = [];
-  private _productsCount: number | null = null;
+  private _productsCount: number | null = 0;
   private _meta: Meta = Meta.initial;
 
   private _lastDoc: DocumentSnapshot | null = null;

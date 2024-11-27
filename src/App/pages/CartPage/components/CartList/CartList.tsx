@@ -28,10 +28,10 @@ const CartList = () => {
           </Text>
         </div>
       )}
-      {cart.map(({ product }) => (
-        <Fragment key={product.id}>
+      {cart.map((countedProduct) => (
+        <Fragment key={countedProduct.product.id}>
           <Divider />
-          <ProductListItem product={product} withActions />
+          <ProductListItem countedProduct={countedProduct} withActions />
         </Fragment>
       ))}
     </div>
